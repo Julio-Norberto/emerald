@@ -1,0 +1,111 @@
+.home-container {
+    width: 70%;
+    position: relative;
+    z-index: 1;
+    margin: 100px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+}
+
+.home-text p {
+    line-height: 25px;
+    font-size: 1.2em;
+    color: #8e99b2;
+    text-align: justify;
+}
+
+.home-title {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    line-height: 70px;
+    font-weight: bold;
+    font-size: 3em;
+    margin-bottom: 30px;
+}
+
+.home-img {
+    width: 55%;
+}
+
+.img-principal {
+    margin-left: 60px;
+    margin-left: 80px;
+}
+
+.btn-home {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.btn-home-link {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    color: #01C38D;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    padding: 8px 45px;
+    transition: 1000ms;
+    backdrop-filter: blur(14px) saturate(200%);
+    -webkit-backdrop-filter: blur(14px) saturate(200%);
+    background-color: rgba(87, 91, 104, 0.43);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.btn-home-link:hover {
+    color: #0cfbb7;
+    transition: 1000ms;
+    padding: 8px 75px;
+}
+
+.gradient-circle {
+    z-index: 0;
+    width: 650px;
+    height: 650px;
+    position: absolute;
+    top: 220px;
+    border-radius: 100%;
+    right: 300px;
+    background-color: #191E29;
+    background-image: 
+        radial-gradient(at 57% 43%, rgba(23, 181, 134, 0.831) 0, transparent 89%), 
+        radial-gradient(at 22% 15%, hsl(218.00, 39%, 11%) 0, transparent 95%);
+
+
+    -webkit-filter: blur(95px);
+    -moz-filter: blur(95px);
+    -o-filter: blur(95px);
+    -ms-filter: blur(95px);
+    filter: blur(95px);
+}
+
+.gradient-circle2 {
+    z-index: 0;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 800px;
+    border-radius: 100%;
+    right: 1500px;
+    background-color: #191E29;
+    background-image: 
+        radial-gradient(at 57% 43%, rgba(23, 181, 134, 0.831) 0, transparent 89%), 
+        radial-gradient(at 22% 15%, hsl(218.00, 39%, 11%) 0, transparent 95%);
+
+
+    -webkit-filter: blur(95px);
+    -moz-filter: blur(95px);
+    -o-filter: blur(95px);
+    -ms-filter: blur(95px);
+    filter: blur(95px);
+}
