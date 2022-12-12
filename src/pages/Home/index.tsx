@@ -3,6 +3,7 @@ import './Home.css'
 import { Link } from 'react-router-dom'
 import Menu from '../../components/Menu'
 import WhyUs from '../../components/WhyUs'
+import CardSections from '../../components/CardSections'
 
 import homeImg from '../../assets/home_image.svg'
 
@@ -32,6 +33,7 @@ export default function Home() {
             </div>
 
             <WhyUs />
+            <CardSections />
 
             <div className='gradient-circle' />
             <div className='gradient-circle2' />

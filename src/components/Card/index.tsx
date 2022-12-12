@@ -1,13 +1,13 @@
 import { Component } from 'react'
 import './Card.css'
 
-interface CardProps {
+interface ICardProps {
     icon: any
     title: string
     description: string
 }
 
-export default function Card(props: CardProps) {
+export default function Card(props: ICardProps) {
     return (
         <div className='card-container'>
             <div className='card-icon'>

@@ -1,0 +1,21 @@
+.cardSection-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.cardSection-text {
+    width: 40%;
+    text-align: center;
+}
+
+.cardSection-text h2 {
+    font-size: 2.5em;
+    margin-bottom: 35px;
+}
+
+.cardSection-text p {
+    font-size: 1.3em;
+}
