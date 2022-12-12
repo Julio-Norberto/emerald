@@ -3,3 +3,65 @@
     margin: 100px auto;
 }
 
+.gradient-cardSections {
+    z-index: 0;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 1800px;
+    border-radius: 100%;
+    right: 1800px;
+    background-color: #191E29;
+    background-image: 
+        radial-gradient(at 57% 43%, rgba(23, 181, 134, 0.831) 0, transparent 89%), 
+        radial-gradient(at 22% 15%, hsl(218.00, 39%, 11%) 0, transparent 95%);
+
+
+    -webkit-filter: blur(95px);
+    -moz-filter: blur(95px);
+    -o-filter: blur(95px);
+    -ms-filter: blur(95px);
+    filter: blur(95px);
+}
+
+.gradient-cardSections2 {
+    z-index: 0;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 2600px;
+    border-radius: 100%;
+    right: 100px;
+    background-color: #191E29;
+    background-image: 
+        radial-gradient(at 57% 43%, rgb(23, 181, 134) 0, transparent 89%), 
+        radial-gradient(at 22% 15%, hsl(218.00, 39%, 11%) 0, transparent 95%);
+
+
+    -webkit-filter: blur(95px);
+    -moz-filter: blur(95px);
+    -o-filter: blur(95px);
+    -ms-filter: blur(95px);
+    filter: blur(95px);
+}
+
+.gradient-cardSections3 {
+    z-index: 0;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 1800px;
+    border-radius: 100%;
+    right: 1800px;
+    background-color: #191E29;
+    background-image: 
+        radial-gradient(at 57% 43%, rgba(23, 181, 134, 0.831) 0, transparent 89%), 
+        radial-gradient(at 22% 15%, hsl(218.00, 39%, 11%) 0, transparent 95%);
+
+
+    -webkit-filter: blur(95px);
+    -moz-filter: blur(95px);
+    -o-filter: blur(95px);
+    -ms-filter: blur(95px);
+    filter: blur(95px);
+}

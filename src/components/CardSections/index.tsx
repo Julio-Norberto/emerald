@@ -12,6 +12,10 @@ export default function CardSections() {
             <CardSection direction='row-reverse' image={device} title='Seus dados de forma clara e intuitiva' description='Aproveite de nossas ferramentas de controle de finanças que exibem seus dados de forma extremamente intuitiva e visual, chega de 1 milhão de números espalhados e confusos na sua tela, acompanhe cada centavo através de gráficos bem elaborados que mostram suas finanças de forma organizada.' />
             
             <CardSection image={macbook} title='Todos os seus registros não apenas no digital, mas também em suas mãos' description='Tenha os seus registros de forma organizada não apenas no nosso Software, mas também em suas mãos. Com o Emerald você pode gerar relatórios para acompanhar suas finanças de forma fisíca e palpável, caso seja de sua preferência.' />
+
+            <div className='gradient-cardSections' />
+            <div className='gradient-cardSections2' />
+            <div className='gradient-cardSections3' />
         </div>
     )
 }
