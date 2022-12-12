@@ -1,0 +1,43 @@
+.whyUs-container {
+    width: 70%;
+    margin: 120px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.whyUs-title {
+    font-size: 1.5em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-bottom: 50px;
+}
+
+.whyUs-cards {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.gradient-circle-whyUs {
+    z-index: 0;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    bottom: -440px;
+    right: 7px;
+    border-radius: 100%;
+    
+    background-color: #191E29;
+    background-image: 
+        radial-gradient(at 57% 43%, rgb(0, 255, 179) 0, transparent 100%), 
+        radial-gradient(at 22% 15%, hsl(218.00, 39%, 11%) 0, transparent 95%);
+
+
+    -webkit-filter: blur(95px);
+    -moz-filter: blur(95px);
+    -o-filter: blur(95px);
+    -ms-filter: blur(95px);
+    filter: blur(95px);
+}

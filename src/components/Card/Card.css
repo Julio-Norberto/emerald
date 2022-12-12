@@ -1,0 +1,19 @@
+.card-icon {
+    margin-bottom: 15px;
+}
+
+.card-text {
+    width: 350px;
+    margin: 0 auto;
+}
+
+.card-text h3 {
+    font-size: 1.4em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-bottom: 15px;
+}
+
+.card-text p {
+    color: #8e99b2;
+    font-size: 1.1em;
+}
