@@ -1,0 +1,24 @@
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 75%;
+    margin: 0 auto;
+    border-top: 1px solid gray;
+    padding-top: 30px;
+    margin-bottom: 20px;
+}
+
+.footer-container p {
+    font-family: 'Poppins', sans-serif;
+}
+
+.social a {
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+.ilustrations {
+    color: #fff;
+    text-decoration: none;
+}
