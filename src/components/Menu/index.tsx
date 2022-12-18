@@ -23,7 +23,7 @@ export default function Menu() {
                     </li>
 
                     <li>
-                        <Link className='get-started' to=''>Get Started</Link>
+                        <Link className='get-started' to='/register'>Get Started</Link>
                     </li>
                 </ul>
             </div>

@@ -23,7 +23,7 @@ export default function Home() {
                     </p>
 
                     <div className='btn-home'>
-                        <a className='btn-home-link' href="">Get Started</a>
+                        <a className='btn-home-link' href="/register">Get Started</a>
                     </div>
                 </div>
 
