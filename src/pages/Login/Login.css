@@ -1,4 +1,4 @@
-.register-container {
+.login-container {
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -22,7 +22,11 @@
     border: 1px solid rgba(255, 255, 255, 0.125);
 }
 
-.form-card h2 {
+.login-title-div {
+    margin-bottom: 70px;
+}
+
+.login-title {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-image: linear-gradient(to bottom, #fff, rgba(0,255,184,1), rgba(19,45,70,1));
     background-clip: text;
@@ -57,7 +61,7 @@
     border-radius: 3px;
 }
 
-.btn-register {
+.btn-register-login {
     font-family: 'Poppins', sans-serif;
     text-decoration: none;
     color: #01C38D;
@@ -71,26 +75,13 @@
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.125);
     font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 50px;
 }
 
-.btn-register:hover {
+.btn-register-login:hover {
     color: #0cfbb7;
     transition: 1000ms;
     padding: 8px 75px;
     cursor: pointer;
-}
-
-.login-link-p {
-    margin-top: 20px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.8em;
-}
-
-.login-link {
-    color: #01C38D;
-    font-weight: bold;
-}
-
-.login-link:hover {
-    color: #0cfbb7;
 }

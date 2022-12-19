@@ -27,7 +27,7 @@ export default function Register() {
                 </div>
                 <input className='btn-register' type="submit" value="Registrar" />
 
-                <p className='login-link-p'>Já possui conta? <a className='login-link' target="_blank" href="/login">Fazer Login</a> </p>
+                <p className='login-link-p'>Já possui conta? <a className='login-link' href="/login">Fazer Login</a> </p>
             </form>
         </div>
     )
