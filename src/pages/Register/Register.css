@@ -10,7 +10,7 @@
 
 .form-card {
     width: 500px;
-    height: 550px;
+    height: 570px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -78,4 +78,19 @@
     transition: 1000ms;
     padding: 8px 75px;
     cursor: pointer;
+}
+
+.login-link-p {
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8em;
+}
+
+.login-link {
+    color: #01C38D;
+    font-weight: bold;
+}
+
+.login-link:hover {
+    color: #0cfbb7;
 }
