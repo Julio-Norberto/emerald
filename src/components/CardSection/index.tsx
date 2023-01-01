@@ -1,4 +1,4 @@
-import { DetailedHTMLProps, HTMLAttributes } from 'react'
+import React from 'react'
 import './CardSection.css'
 
 interface ICardSectionProps {
@@ -9,7 +9,7 @@ interface ICardSectionProps {
 }
 
 export default function CardSection(props: ICardSectionProps) {
-    const style = {
+    const style: React.CSSProperties | any = {
         flexDirection: props.direction
     }
 
