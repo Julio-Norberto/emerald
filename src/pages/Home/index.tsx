@@ -1,6 +1,5 @@
 import './Home.css'
 
-import { Link } from 'react-router-dom'
 import Menu from '../../components/Menu'
 import WhyUs from '../../components/WhyUs'
 import CardSections from '../../components/CardSections'

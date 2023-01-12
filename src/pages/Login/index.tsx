@@ -19,7 +19,7 @@ export default function Login() {
                     <label className='align'>Sua senha <Key style={{ marginLeft: 10 }} /> </label>
                     <input type="password" name="password" id="password" placeholder="Digite sua senha..." />
                 </div>
-                <input className='btn-register-login' type="submit" value="Registrar" />
+                <input className='btn-register-login' type="submit" value="Login" />
             </form>
         </div>
     )
