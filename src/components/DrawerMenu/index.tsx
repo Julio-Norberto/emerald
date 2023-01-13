@@ -4,13 +4,13 @@ import { Box } from "@mui/system"
 export const DrawerMenu = () => {
   return(
     <>
-      <Drawer open={true}>
-        <Box sx={{ backgroundColor: '#191E29' }} width='300px' height='100%' display='flex' flexDirection='column'>
+      <Drawer open={true} variant={"persistent"}>
+        <Box sx={{ backgroundColor: '#141010' }} width='280px' height='100%' display='flex' flexDirection='column'>
           <Box width='100%' height='200px' display='flex' alignItems='center' justifyContent='center'>
             <Avatar sx={{ height: 100, width: 100}} src="https://lh3.googleusercontent.com/a/AEdFTp4MYtISvOobTkI5ltevJbvrCA131r81RAP6pxPyoPA=s288-p-rw-no" />
           </Box>
 
-          <Divider />
+          <Divider sx={{ color: '#fff', backgroundColor: '#01C38D' }} />
 
           <Box flex={1}>
             <List component='nav'>
