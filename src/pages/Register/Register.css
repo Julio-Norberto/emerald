@@ -58,19 +58,19 @@
 }
 
 .btn-register {
-    font-family: 'Poppins', sans-serif;
-    text-decoration: none;
-    color: #01C38D;
-    border: 1px solid #fff;
-    border-radius: 4px;
-    padding: 8px 45px;
-    transition: 1000ms;
-    backdrop-filter: blur(14px) saturate(200%);
-    -webkit-backdrop-filter: blur(14px) saturate(200%);
-    background-color: rgba(87, 91, 104, 0.43);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.125);
-    font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  color: #01C38D;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  padding: 8px 45px;
+  transition: 1000ms;
+  backdrop-filter: blur(14px) saturate(200%);
+  -webkit-backdrop-filter: blur(14px) saturate(200%);
+  background-color: rgba(87, 91, 104, 0.43);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  font-weight: 600;
 }
 
 .btn-register:hover {
