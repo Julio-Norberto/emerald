@@ -1,5 +1,5 @@
 import { DrawerMenu } from "../../components/DrawerMenu"
-import { CurrencyCircleDollar } from 'phosphor-react'
+import { PlusCircle, MinusCircle, CurrencyCircleDollar } from 'phosphor-react'
 import CardsDashboard from "../../components/CardsDashboard"
 import './Dashboard.css'
 
@@ -15,13 +15,13 @@ export default function Dashboard() {
         <div className="dashboard-cards">
           <CardsDashboard
             background={'linear-gradient(47deg, rgba(20,16,16,1) 76%, rgba(4,193,140,1) 120%, rgba(1,195,141,1) 100%'}
-            icon={ <CurrencyCircleDollar size={72} color='#01C38D' /> }
+            icon={ <PlusCircle size={72} color='#01C38D' /> }
             total='R$ +1200'
             desc='Total de entradas'
           />
           <CardsDashboard
             background={'linear-gradient(47deg, rgba(20,16,16,1) 76%, #c10404 120%, #c10404) 100%'}
-            icon={ <CurrencyCircleDollar size={72} color='red' /> }
+            icon={ <MinusCircle size={72} color='red' /> }
             total='R$ -200'
             desc='Total de saídas'
           />
