@@ -1,6 +1,8 @@
 import { DrawerMenu } from "../../components/DrawerMenu"
 import { PlusCircle, MinusCircle, CurrencyCircleDollar } from 'phosphor-react'
+
 import CardsDashboard from "../../components/CardsDashboard"
+import graph from '../../assets/graph.jpg'
 import './Dashboard.css'
 
 export default function Dashboard() {
@@ -32,6 +34,8 @@ export default function Dashboard() {
             desc='Saldo total'
           />
         </div>
+
+        <img style={{ marginTop: '70px' }} height={580} width={1000} src={graph} alt="" />
       </div>
     </div>
   )
