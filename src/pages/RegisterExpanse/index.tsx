@@ -1,9 +1,9 @@
 import './registerExpanse.css'
 
-export const RegisterExpanse: React.FC = () => {
+export default function RegisterExpanse() {
   return(
     <div className='expanse-container'>
-
+      <h1>Cadastro de despesas</h1>
     </div>
   )
 }

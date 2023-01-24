@@ -4,14 +4,13 @@ import Menu from '../../components/Menu'
 import WhyUs from '../../components/WhyUs'
 import CardSections from '../../components/CardSections'
 import Footer from '../../components/Footer'
-
 import homeImg from '../../assets/home_image.svg'
 
 export default function Home() {
     return (
         <div className='container'>
             <Menu />
-            
+
             <div className='home-container'>
 
                 <div className='home-text'>
@@ -38,7 +37,7 @@ export default function Home() {
 
             <div className='gradient-circle' />
             <div className='gradient-circle2' />
-            
+
         </div>
     )
 }
