@@ -1,7 +1,10 @@
 import { Avatar, Divider, Drawer, List, ListItemButton, ListItemIcon, Icon, ListItemText } from "@mui/material"
 import { Box } from "@mui/system"
+import { useNavigate } from 'react-router-dom'
 
 export const DrawerMenu = () => {
+  const navigate = useNavigate()
+
   return(
     <>
       <Drawer open={true} variant={"persistent"}>
@@ -14,14 +17,14 @@ export const DrawerMenu = () => {
 
           <Box flex={1}>
             <List component='nav'>
-              <ListItemButton>
+              <ListItemButton onClick={() => navigate('/dashboard')}>
                 <ListItemIcon sx={{ color: '#01C38D' }}>
-                  <Icon>equalizer</Icon>
+                   <Icon>equalizer</Icon>
                 </ListItemIcon>
                 <ListItemText sx={{ color: '#01C38D' }} primary='Dashboard' />
               </ListItemButton>
 
-              <ListItemButton>
+              <ListItemButton onClick={() => navigate('/dashboard/register')}>
                 <ListItemIcon sx={{ color: '#01C38D' }}>
                   <Icon>addcard</Icon>
                 </ListItemIcon >
