@@ -1,3 +1,67 @@
 .expanse-container {
-  margin-left: 330px;
+  padding-left: 320px;
+  width: 80%;
+  height: 100vh;
+}
+
+.expanse-container h1 {
+  margin-top: 30px;
+}
+
+.form-container {
+  width: 100%;
+  margin-top: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.input-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-form input {
+  width: 400px;
+  height: 30px;
+  margin-bottom: 30px;
+}
+
+.input-form label {
+  margin-bottom: 10px;
+  color: #01C38D;
+  font-family: 'Poppins', sans-serif;
+}
+
+.input-form textarea {
+  width: 400px;
+  height: 100px;
+}
+
+.expansive-table {
+  width: 500px;
+  margin-right: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+  width: 600px;
+}
+
+td {
+  padding: 5px;
+  height: 80px;
+  width: 100px;
+}
+
+th {
+  height: 60px;
+  color: #01C38D;
+  font-family: 'Poppins', sans-serif;
 }
