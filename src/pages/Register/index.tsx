@@ -1,8 +1,5 @@
 import { useState } from 'react'
 import { UserCircle, Envelope, Key } from 'phosphor-react'
-import { auth } from '../../services/firebaseConnection.js'
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { useNavigate } from 'react-router-dom'
 import './Register.css'
 
 export default function Register() {
@@ -11,23 +8,6 @@ export default function Register() {
   const [name, setName] = useState()
   const [password, setPassword] = useState()
   const [confirmPass, setConfirmPass] = useState()
-  const navigate = useNavigate()
-
-  // async function HandleRegister() {
-  //   if(email && password) {
-  //     if(password === confirmPass) {
-  //       await createUserWithEmailAndPassword(auth, email, password)
-  //         .then(() => {
-  //           alert('Usuário criado com sucesso!')
-  //           navigate('/dashboard')
-  //         }).catch((err) => console.log(err))
-  //     } else {
-  //       alert('As senhas não coincidem')
-  //     }
-  //   } else {
-  //     alert('Preencha todos os campos')
-  //   }
-  // }
 
   return (
       <div className='register-container'>

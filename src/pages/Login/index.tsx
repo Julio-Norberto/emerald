@@ -1,25 +1,10 @@
 import { useState } from 'react'
-import { signInWithEmailAndPassword } from 'firebase/auth'
-import { auth } from '../../services/firebaseConnection.js'
-import { useNavigate } from 'react-router-dom'
 import { Envelope, Key } from 'phosphor-react'
 import './Login.css'
 
 export default function Login() {
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
-  const navigate = useNavigate()
-
-  // async function handleLogin() {
-  //   if(email && password) {
-  //     await signInWithEmailAndPassword(auth, email, password)
-  //       .then(() => {
-  //         alert('Usuário logado com sucesso!')
-  //         navigate('/dashboard')
-  //       })
-  //       .catch((err) => console.log(err))
-  //   }
-  // }
 
   return (
     <div className='login-container'>
