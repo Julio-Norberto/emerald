@@ -2,7 +2,7 @@ import api from '../utils/api'
 import { useState, useEffect } from 'react'
 import { Navigate } from 'react-router-dom'
 
-interface IUser {
+export interface IUser {
   name: string,
   login: string,
   email: string,
