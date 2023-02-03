@@ -4,9 +4,9 @@ import { Navigate } from 'react-router-dom'
 
 export interface IUser {
   name: string,
-  login: string,
   email: string,
   password: string,
+  confirmPassword: string,
 }
 
 export const useAuth = () => {

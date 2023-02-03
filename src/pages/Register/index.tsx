@@ -1,13 +1,22 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { UserCircle, Envelope, Key } from 'phosphor-react'
+import { Context } from '../../contexts/UserContext.js'
 import './Register.css'
 
 export default function Register() {
 
-  const [email, setEmail] = useState()
-  const [name, setName] = useState()
-  const [password, setPassword] = useState()
-  const [confirmPass, setConfirmPass] = useState()
+  const [email, setEmail] = useState<string>()
+  const [name, setName] = useState<string>()
+  const [password, setPassword] = useState<string>()
+  const [confirmPassword, setConfirmPass] = useState()
+
+  const { register } = useContext(Context)
+
+  function handleRegister() {
+    if(name && email && password && confirmPassword) {
+      register({ name, email, password, confirmPassword })
+    }
+  }
 
   return (
       <div className='register-container'>
@@ -32,7 +41,7 @@ export default function Register() {
                   <label className='align'>Confirme sua senha <Key style={{ marginLeft: 10 }} /> </label>
                   <input onChange={(e: any) => setConfirmPass(e.target.value)} type="password" placeholder="Digite novamente sua senha..." />
               </div>
-              <input className='btn-register' value="Registrar" type='button' />
+              <input onClick={handleRegister} className='btn-register' value="Registrar" type='button' />
 
               <p className='login-link-p'>Já possui conta? <a className='login-link' href="/login">Fazer Login</a> </p>
           </form>

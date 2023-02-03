@@ -1,7 +1,7 @@
 import './App.css'
 
 import { BrowserRouter } from 'react-router-dom'
-import { UserProvider } from './contexts/UserContext'
+import { UserProvider } from './contexts/UserContext.js'
 
 import Routes from './routes/routes'
 
