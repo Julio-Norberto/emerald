@@ -3,7 +3,7 @@ import { useAuth } from "../hooks/useAuth";
 import { IUser } from '../hooks/useAuth'
 
 interface IUserContext {
-  register: (user: IUser) => Promise<void>
+  register: (name: string, email: string, password: string, confirmPassword: string) => Promise<void>
 }
 
 export const Context = createContext({} as IUserContext)

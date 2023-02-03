@@ -1,5 +1,6 @@
 import { useContext, useState } from 'react'
 import { UserCircle, Envelope, Key } from 'phosphor-react'
+import { Message } from '../../components/Message'
 import { Context } from '../../contexts/UserContext.js'
 import './Register.css'
 
@@ -13,13 +14,12 @@ export default function Register() {
   const { register } = useContext(Context)
 
   function handleRegister() {
-    if(name && email && password && confirmPassword) {
-      register({ name, email, password, confirmPassword })
-    }
+    register(name!, email!, password!, confirmPassword!)
   }
 
   return (
       <div className='register-container'>
+      <Message /> <br />
           <form className='form-card'>
               <h2>Registre-se na nossa plataforma!</h2>
               <div className='div-input'>

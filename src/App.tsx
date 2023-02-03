@@ -9,7 +9,9 @@ export default function App() {
   return (
     <BrowserRouter>
       <UserProvider>
+
         <Routes />
+
       </UserProvider>
     </BrowserRouter>
   )
