@@ -13,7 +13,7 @@ export default function Register() {
 
   const { register } = useContext(Context)
 
-  function handleRegister() {
+  async function handleRegister() {
     register(name!, email!, password!, confirmPassword!)
   }
 

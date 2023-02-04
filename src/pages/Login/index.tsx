@@ -1,10 +1,16 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { Envelope, Key } from 'phosphor-react'
+import { Context } from '../../contexts/UserContext'
 import './Login.css'
 
 export default function Login() {
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
+  const { login } = useContext(Context)
+
+  async function handleLogin() {
+    login(email!, password!)
+  }
 
   return (
     <div className='login-container'>
@@ -23,7 +29,7 @@ export default function Login() {
             <label className='align'>Sua senha <Key style={{ marginLeft: 10 }} /> </label>
             <input onChange={(e: any) => setPassword(e.target.value)} type="password" name="password" id="password" placeholder="Digite sua senha..." />
         </div>
-        <input className='btn-register-login' type="button" value="Login" />
+        <input onClick={handleLogin} className='btn-register-login' type="button" value="Login" />
       </form>
     </div>
     )
