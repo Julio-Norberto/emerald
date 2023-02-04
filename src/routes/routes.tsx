@@ -15,8 +15,8 @@ export default function Routes() {
           <Route path='/' element={ <Home /> } />
           <Route path='/login' element={ <Login /> } />
           <Route path='/register' element={ <Register /> } />
-          <Route path='/dashboard' element={ <Dashboard />} />
-          <Route path='/dashboard/register' element={ <RegisterExpanse /> } />
+          <Route path='/dashboard' element={ authenticated ? <Dashboard /> : <Login /> } />
+          <Route path='/dashboard/register' element={ authenticated ? <RegisterExpanse /> : <Login /> } />
       </ReactRoutes>
   )
 }

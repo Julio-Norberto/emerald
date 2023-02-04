@@ -16,6 +16,14 @@ export const useAuth = () => {
   const { setFlashMessage } = useFlashMessages()
   const navigate = useNavigate()
 
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    if(token) {
+      api.defaults.headers.Authorization = `Bearer ${JSON.stringify(token)}`
+      setAuthenticated(true)
+    }
+  }, [])
+
   const register = async(name: string, email: string, password: string, confirmPassword: string) => {
     let msgText = 'Cadastro realizado com sucesso!'
     let msgType = 'success'
