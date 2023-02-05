@@ -1,8 +1,12 @@
 import './registerExpanse.css'
 
+import { useState } from 'react'
 import { DrawerMenu } from '../../components/DrawerMenu'
+import { TableExpanse } from '../../components/TableExpanse'
 
 export default function RegisterExpanse() {
+  const [expanseType, setExpanseType] = useState<'entrada' | 'saida'>('entrada')
+
   return(
     <div>
       <DrawerMenu />
@@ -18,8 +22,16 @@ export default function RegisterExpanse() {
               <input type="text" name='amount' id='amount' placeholder='Digite o valor da despesa...' />
             </div>
 
+            <div style={{ marginBottom: '20px' }} className='input-form'>
+              <label htmlFor="expanseType">Informe o tipo da despesa</label>
+              <select style={{ height: '30px' }} value={expanseType} onChange={e => setExpanseType(e.target.value as "entrada" | "saida")}>
+                <option value="entrada">Entrada</option>
+                <option value="saida">Saída</option>
+              </select>
+            </div>
+
             <div className='input-form'>
-              <label htmlFor="type"> Informe o tipo de despesa: </label>
+              <label htmlFor="type"> Informe a categoria da despesa: </label>
               <input type="text" placeholder="Informe o tipo:" list="faixa" name='type' id='type' />
               <datalist id="faixa">
                 <option value="">Tipo:</option>
@@ -34,57 +46,20 @@ export default function RegisterExpanse() {
 
             <div className='input-form'>
               <label htmlFor="date">Informe a data:</label>
-              <input type="date" id='date' name='date' />
+              <input type="text" id='date' name='date' placeholder='Ex: 25/01/2002' />
             </div>
 
             <div className='input-form'>
               <label htmlFor="description">Descrição (opcional)</label>
-              <textarea name="description" id="description" cols={30} rows={10}></textarea>
+              <textarea placeholder='Descrição da despesa...' name="description" id="description" cols={30} rows={10}></textarea>
             </div>
             {/* FIM DOS INPUTS */}
 
           </div>
 
           {/* INICIO DA TABELA */}
-          <div className='expansive-table'>
-          <h2 style={{ marginBottom: '30px' }} >Adições recentes</h2>
-          <table border={1}>
-            <thead>
-            <tr>
-                <th>Data</th>
-                <th>Tipo</th>
-                <th>Descrição</th>
-                <th>Valor</th>
-                <th>Ações</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>data1</td>
-                <td>tipo1</td>
-                <td>desc1</td>
-                <td>valor1</td>
-                <td>acao 1</td>
-            </tr>
-            <tr>
-                <td>data2</td>
-                <td>tipo2</td>
-                <td>desc2</td>
-                <td>valor2</td>
-                <td>acao 2</td>
-            </tr>
-            <tr>
-                <td>data3</td>
-                <td>tipo3</td>
-                <td>desc3</td>
-                <td>valor3</td>
-                <td>acao 3</td>
-            </tr>
-            </tbody>
-          </table>
-          </div>
+            <TableExpanse />
           {/* FIM DA TABELA */}
-
         </div>
 
       </div>

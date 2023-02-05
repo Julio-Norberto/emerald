@@ -1,0 +1,26 @@
+.expansive-table {
+  width: 500px;
+  margin-right: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+  width: 600px;
+}
+
+td {
+  padding: 5px;
+  height: 80px;
+  width: 100px;
+}
+
+th {
+  height: 60px;
+  color: #01C38D;
+  font-family: 'Poppins', sans-serif;
+}
