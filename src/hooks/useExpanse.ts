@@ -12,12 +12,12 @@ export const useExpanse = () => {
       await api.post('/register/expanse', {
         amount,
         expanseType,
-        expanseCategory,
+        type: expanseCategory,
         date,
         description
       }, {
         headers: {
-          authorization: `Bearer ${JSON.stringify(token)}`
+          authorization: `Bearer ${JSON.parse(token!)}`
         }
       })
     } catch(err: any) {
