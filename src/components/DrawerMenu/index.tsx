@@ -1,8 +1,9 @@
 import { Avatar, Divider, Drawer, List, ListItemButton, ListItemIcon, Icon, ListItemText } from "@mui/material"
 import { Box } from "@mui/system"
+import React from "react"
 import { useNavigate } from 'react-router-dom'
 
-export const DrawerMenu = () => {
+export const DrawerMenu = React.memo((DrawerMenu: any) => {
   const navigate = useNavigate()
 
   return(
@@ -36,4 +37,4 @@ export const DrawerMenu = () => {
       </Drawer>
     </>
   )
-}
+})
