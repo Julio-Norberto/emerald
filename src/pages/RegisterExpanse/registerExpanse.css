@@ -38,3 +38,19 @@
   width: 400px;
   height: 100px;
 }
+
+.btn-register-expanse {
+  width: 402px;
+  margin-top: 20px;
+  height: 35px;
+  background-color: #2d2f33;
+  color: #01C38D;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+}
+
+.btn-register-expanse:hover {
+  cursor: pointer;
+  background-color: #313744;
+}

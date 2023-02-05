@@ -3,6 +3,7 @@ import './registerExpanse.css'
 import { useState } from 'react'
 import { DrawerMenu } from '../../components/DrawerMenu'
 import { TableExpanse } from '../../components/TableExpanse'
+import { Message } from '../../components/Message'
 
 export default function RegisterExpanse() {
   const [amount, setAmount] = useState<string>()
@@ -15,6 +16,7 @@ export default function RegisterExpanse() {
     <div>
       <DrawerMenu />
       <div className='expanse-container'>
+        <Message />
         <h1>Cadastro de despesas</h1>
         <div className='form-container'>
 
@@ -57,6 +59,8 @@ export default function RegisterExpanse() {
               <label htmlFor="description">Descrição (opcional)</label>
               <textarea onChange={e => setDescription(e.target.value)} placeholder='Descrição da despesa...' name="description" id="description" cols={30} rows={10}></textarea>
             </div>
+
+            <button className='btn-register-expanse'>Cadastrar despesa</button>
             {/* FIM DOS INPUTS */}
 
           </div>
