@@ -1,9 +1,9 @@
 import './registerExpanse.css'
-
 import { useState } from 'react'
 import { DrawerMenu } from '../../components/DrawerMenu'
 import { TableExpanse } from '../../components/TableExpanse'
 import { Message } from '../../components/Message'
+import { useExpanse } from '../../hooks/useExpanse'
 
 export default function RegisterExpanse() {
   const [amount, setAmount] = useState<string>()
@@ -11,6 +11,12 @@ export default function RegisterExpanse() {
   const [expanseCategory, setExpanseCategory] = useState<string>()
   const [date, setDate] = useState<string>()
   const [description, setDescription] = useState<string>()
+
+  const { registerExpanse } = useExpanse()
+
+  function handleRegisterExpanse() {
+    registerExpanse(amount!, expanseType, expanseCategory!, date!, description!)
+  }
 
   return(
     <div>
@@ -60,7 +66,7 @@ export default function RegisterExpanse() {
               <textarea onChange={e => setDescription(e.target.value)} placeholder='Descrição da despesa...' name="description" id="description" cols={30} rows={10}></textarea>
             </div>
 
-            <button className='btn-register-expanse'>Cadastrar despesa</button>
+            <button onClick={handleRegisterExpanse} className='btn-register-expanse'>Cadastrar despesa</button>
             {/* FIM DOS INPUTS */}
 
           </div>
