@@ -1,6 +1,7 @@
 import './tableExpanse.css'
 import api from '../../utils/api'
 import { useEffect, useState } from 'react'
+import { Trash, Pencil } from 'phosphor-react'
 
 type tableComponent = {
   title: string
@@ -57,7 +58,7 @@ export const TableExpanse: React.FC<tableComponent> = ({ type, title }) => {
               <td align='center'> { expanses.amount } R$ </td>
               { !type ? <td align='center'> {expanses.expanseType} </td> : '' }
               { expanses.description ? <td align='center'> {expanses.description} </td> : '' }
-              <td align='center'> <button>apagar</button> <button>update</button> </td>
+              <td align='center'> <button> {<Trash width={25} height={25} />} </button> <button> {<Pencil width={25} height={25} />} </button> </td>
             </tr>
           </tbody>
           ) : !type ? (
@@ -68,7 +69,7 @@ export const TableExpanse: React.FC<tableComponent> = ({ type, title }) => {
               <td align='center'> { expanses.amount } R$ </td>
               <td align='center'> {expanses.expanseType} </td>
               <td align='center'> {expanses.description} </td>
-              <td align='center'> <button>apagar</button> <button>update</button> </td>
+              <td align='center'> <button> {<Trash width={25} height={25} />} </button> <button> {<Pencil width={25} height={25} />} </button> </td>
             </tr>
           </tbody>
           ) : ''
