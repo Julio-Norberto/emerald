@@ -1,5 +1,4 @@
 import './cardsDashboard.css'
-import { CurrencyCircleDollar } from 'phosphor-react'
 
 interface ICardsDashboardProps {
   icon: React.ReactNode
