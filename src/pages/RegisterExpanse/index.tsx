@@ -23,11 +23,11 @@ export default function RegisterExpanse() {
       <DrawerMenu />
       <div className='expanse-container'>
         <Message />
-        <h1>Cadastro de despesas</h1>
+
         <div className='form-container'>
 
           <div className='inputs'>
-
+            <h1>Cadastro de despesas</h1>
             {/* INICIO DOS INPUTS */}
             <div className='input-form'>
               <label htmlFor="amount"> Valor da despesa (R$): </label>
