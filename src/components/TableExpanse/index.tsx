@@ -43,22 +43,35 @@ export const TableExpanse: React.FC<tableComponent> = ({ type, title }) => {
             <th>Data</th>
             <th>Categoria</th>
             <th>Valor</th>
-            { type ? <th>tipo</th> : '' }
+            { !type ? <th> Tipo </th> : '' }
             <th>Descrição</th>
             <th>Ações</th>
         </tr>
         </thead>
         { data?.map((expanses, index) => (
-          <tbody key={index}>
+          type && expanses.expanseType === type ? (
+            <tbody key={index}>
             <tr >
               <td align='center' > { expanses.date } </td>
               <td align='center'> {expanses.type} </td>
               <td align='center'> { expanses.amount } R$ </td>
-              { type ? <td align='center'> {expanses.expanseType} </td> : '' }
+              { !type ? <td align='center'> {expanses.expanseType} </td> : '' }
               { expanses.description ? <td align='center'> {expanses.description} </td> : '' }
               <td align='center'> <button>apagar</button> <button>update</button> </td>
             </tr>
           </tbody>
+          ) : !type ? (
+            <tbody key={index}>
+            <tr >
+              <td align='center' > { expanses.date } </td>
+              <td align='center'> {expanses.type} </td>
+              <td align='center'> { expanses.amount } R$ </td>
+              <td align='center'> {expanses.expanseType} </td>
+              <td align='center'> {expanses.description} </td>
+              <td align='center'> <button>apagar</button> <button>update</button> </td>
+            </tr>
+          </tbody>
+          ) : ''
         )) }
       </table>
     </div>

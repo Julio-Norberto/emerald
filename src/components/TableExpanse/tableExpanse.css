@@ -11,6 +11,7 @@ table {
   border: 1px solid #ddd;
   border-collapse: collapse;
   width: 600px;
+  margin-bottom: 30px;
 }
 
 td {
