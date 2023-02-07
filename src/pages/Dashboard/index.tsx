@@ -1,10 +1,11 @@
-import { PlusCircle, MinusCircle, CurrencyCircleDollar } from 'phosphor-react'
+import { PlusCircle, MinusCircle, CurrencyCircleDollar, File } from 'phosphor-react'
 import { DrawerMenu } from '../../components/DrawerMenu'
 import { useEffect, useState } from 'react'
 import CardsDashboard from "../../components/CardsDashboard"
 import graph from '../../assets/graph.jpg'
 import './Dashboard.css'
 import api from '../../utils/api'
+import { TableExpanse } from '../../components/TableExpanse'
 
 interface IUserExpanses {
   amount: string,
@@ -61,7 +62,7 @@ export default function Dashboard() {
 
   return(
 
-    <div>
+    <div className='primary-div'>
       <DrawerMenu />
       <div className="dashboard-content">
         <div className="dashboard-title">
@@ -89,8 +90,14 @@ export default function Dashboard() {
           />
         </div>
 
-        <img style={{ marginTop: '70px' }} height={580} width={1000} src={graph} alt="" />
+        <img style={{ marginTop: '70px' }} height={580} width={800} src={graph} alt="" />
       </div>
+
+      <div className='table-div'>
+        <TableExpanse title='Todas as despesas' action={false} />
+        <button className='btn-pdf' >Exportar PDF <File color='#fff' size={20} style={{ marginLeft: '10px' }} /> </button>
+      </div>
+
     </div>
   )
 }

@@ -1,12 +1,12 @@
 .cardDash-container {
   margin-top: 30px;
   box-shadow: 10px 10px 10px black;
-  width: 280px;
+  width: 240px;
   height: 150px;
   border-radius: 12px;
   padding: 15px;
   color: #8e99b2;
-  margin-right: 30px;
+  margin-right: 50px;
 }
 
 .cardDash-container h2 {

@@ -6,6 +6,7 @@ import { Trash, Pencil } from 'phosphor-react'
 type tableComponent = {
   title: string
   type?: string
+  action: boolean
 }
 
 interface dataExpanse {
@@ -16,7 +17,7 @@ interface dataExpanse {
   description: string
 }
 
-export const TableExpanse: React.FC<tableComponent> = ({ type, title }) => {
+export const TableExpanse: React.FC<tableComponent> = ({ type, title, action }) => {
   const [data, setData] = useState<dataExpanse[]>()
 
   useEffect(() => {
@@ -46,7 +47,7 @@ export const TableExpanse: React.FC<tableComponent> = ({ type, title }) => {
             <th>Valor</th>
             { !type ? <th> Tipo </th> : '' }
             <th>Descrição</th>
-            <th>Ações</th>
+            { action ? <th>Ações</th> : '' }
         </tr>
         </thead>
         { data?.map((expanses, index) => (
@@ -58,7 +59,7 @@ export const TableExpanse: React.FC<tableComponent> = ({ type, title }) => {
               <td align='center'> { expanses.amount } R$ </td>
               { !type ? <td align='center'> {expanses.expanseType} </td> : '' }
               { expanses.description ? <td align='center'> {expanses.description} </td> : '' }
-              <td align='center'> <button> {<Trash width={25} height={25} />} </button> <button> {<Pencil width={25} height={25} />} </button> </td>
+              { action ? <td align='center'> <button> {<Trash width={25} height={25} />} </button> <button> {<Pencil width={25} height={25} />} </button> </td> : '' }
             </tr>
           </tbody>
           ) : !type ? (
@@ -69,7 +70,7 @@ export const TableExpanse: React.FC<tableComponent> = ({ type, title }) => {
               <td align='center'> { expanses.amount } R$ </td>
               <td align='center'> {expanses.expanseType} </td>
               <td align='center'> {expanses.description} </td>
-              <td align='center'> <button> {<Trash width={25} height={25} />} </button> <button> {<Pencil width={25} height={25} />} </button> </td>
+              { action ? <td align='center'> <button> {<Trash width={25} height={25} />} </button> <button> {<Pencil width={25} height={25} />} </button> </td> : '' }
             </tr>
           </tbody>
           ) : ''

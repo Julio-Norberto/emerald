@@ -73,8 +73,8 @@ export default function RegisterExpanse() {
 
           <div>
           {/* INICIO DA TABELA */}
-          <TableExpanse title='Saídas recentes' type='saida' />
-          <TableExpanse title='Entradas recentes' type='entrada' />
+          <TableExpanse title='Saídas recentes' type='saida' action={true} />
+          <TableExpanse title='Entradas recentes' type='entrada' action={true} />
           {/* FIM DA TABELA */}
           </div>
 
