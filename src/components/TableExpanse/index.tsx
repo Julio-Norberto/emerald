@@ -2,6 +2,8 @@ import './tableExpanse.css'
 import api from '../../utils/api'
 import { useEffect, useState } from 'react'
 import { Trash, Pencil } from 'phosphor-react'
+import { useFlashMessages } from '../../hooks/useFlashMessages.js'
+import { useNavigate } from 'react-router-dom'
 
 type tableComponent = {
   title: string
@@ -10,6 +12,7 @@ type tableComponent = {
 }
 
 interface dataExpanse {
+  _id?: string
   amount: string,
   type: string,
   expanseType: string,
@@ -19,6 +22,8 @@ interface dataExpanse {
 
 export const TableExpanse: React.FC<tableComponent> = ({ type, title, action }) => {
   const [data, setData] = useState<dataExpanse[]>()
+  const { setFlashMessage } = useFlashMessages()
+  const navigate = useNavigate()
 
   useEffect(() => {
     async function fetchUserExpanses() {
@@ -35,6 +40,19 @@ export const TableExpanse: React.FC<tableComponent> = ({ type, title, action }) 
 
     fetchUserExpanses()
   }, [])
+
+  async function handleDelete(id: string) {
+    const token = localStorage.getItem('token')
+
+    await api.delete(`/expanses/${id}`, {
+      headers: {
+        Authorization: `Bearer ${JSON.parse(token!)}`
+      }
+    })
+
+    setFlashMessage('Dado excluído com sucesso!', 'success')
+    navigate(0)
+  }
 
   return (
     <div className='expansive-table'>
@@ -59,7 +77,7 @@ export const TableExpanse: React.FC<tableComponent> = ({ type, title, action }) 
               <td align='center'> { expanses.amount } R$ </td>
               { !type ? <td align='center'> {expanses.expanseType} </td> : '' }
               { expanses.description ? <td align='center'> {expanses.description} </td> : '' }
-              { action ? <td align='center'> <button> {<Trash width={25} height={25} />} </button> <button> {<Pencil width={25} height={25} />} </button> </td> : '' }
+              { action ? <td align='center'> <button onClick={() => handleDelete(expanses._id!)}> {<Trash width={25} height={25} />} </button> <button> {<Pencil width={25} height={25} />} </button> </td> : '' }
             </tr>
           </tbody>
           ) : !type ? (
@@ -70,7 +88,7 @@ export const TableExpanse: React.FC<tableComponent> = ({ type, title, action }) 
               <td align='center'> { expanses.amount } R$ </td>
               <td align='center'> {expanses.expanseType} </td>
               <td align='center'> {expanses.description} </td>
-              { action ? <td align='center'> <button> {<Trash width={25} height={25} />} </button> <button> {<Pencil width={25} height={25} />} </button> </td> : '' }
+              { action ? <td align='center'> <button onClick={() => handleDelete(expanses._id!)} > {<Trash width={25} height={25} />} </button> <button> {<Pencil width={25} height={25} />} </button> </td> : '' }
             </tr>
           </tbody>
           ) : ''
