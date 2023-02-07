@@ -1,7 +1,10 @@
 import './Menu.css'
 import { Link } from 'react-router-dom'
+import { useAuth } from '../../hooks/useAuth'
 
 export default function Menu() {
+  const { authenticated } = useAuth()
+
     return (
         <div className='menu-container'>
             <div className='logo'>
@@ -23,7 +26,7 @@ export default function Menu() {
                     </li>
 
                     <li>
-                        <Link className='get-started' to='/register'>Get Started</Link>
+                      { authenticated ? <Link className='get-started' to='/dashboard' >Dashboard</Link> : <Link className='get-started' to='/register'>Get Started</Link> }
                     </li>
                 </ul>
             </div>

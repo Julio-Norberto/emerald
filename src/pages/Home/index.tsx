@@ -6,6 +6,8 @@ import CardSections from '../../components/CardSections'
 import Footer from '../../components/Footer'
 import homeImg from '../../assets/home_image.svg'
 
+import { Link } from 'react-router-dom'
+
 export default function Home() {
     return (
         <div className='container'>
@@ -21,7 +23,7 @@ export default function Home() {
                     </p>
 
                     <div className='btn-home'>
-                        <a className='btn-home-link' href="/register">Get Started</a>
+                        <Link className='btn-home-link' to="/register">Get Started</Link>
                     </div>
                 </div>
 
