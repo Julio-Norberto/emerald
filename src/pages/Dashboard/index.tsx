@@ -96,7 +96,7 @@ export default function Dashboard() {
       ]
     })
 
-    return [["Entradas", "Saídas"], ...result]
+    return [["Categoria", "Percetual"], ...result]
   }
 
   var options = {
