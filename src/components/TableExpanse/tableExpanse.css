@@ -14,10 +14,13 @@
 }
 
 table {
-  border: 1px solid #ddd;
+  border: none;
   border-collapse: collapse;
   width: 600px;
   margin-bottom: 30px;
+  -webkit-backdrop-filter: blur(14px) saturate(200%);
+  background-color: rgba(87, 91, 104, 0.43);
+  border-radius: 12px;
 }
 
 td {

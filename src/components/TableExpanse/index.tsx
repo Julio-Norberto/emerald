@@ -57,7 +57,7 @@ export const TableExpanse: React.FC<tableComponent> = ({ type, title, action }) 
   return (
     <div className='expansive-table'>
       <h2 style={{ marginBottom: '30px' }} > {title} </h2>
-      <table border={1}>
+      <table>
         <thead>
         <tr>
             <th>Data</th>

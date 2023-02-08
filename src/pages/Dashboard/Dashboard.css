@@ -51,7 +51,7 @@
 .div-charts {
   width: 95%;
   height: 100%;
-  margin-top: 150px;
+  margin-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,5 +60,4 @@
   background-color: rgba(87, 91, 104, 0.43);
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.125);
-  align-items: center;
 }
