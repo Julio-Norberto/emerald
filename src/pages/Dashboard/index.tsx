@@ -2,10 +2,11 @@ import { PlusCircle, MinusCircle, CurrencyCircleDollar, File } from 'phosphor-re
 import { DrawerMenu } from '../../components/DrawerMenu'
 import { useEffect, useState } from 'react'
 import { TableExpanse } from '../../components/TableExpanse'
-import _ from 'lodash'
+import { Chart } from 'react-google-charts'
+
+import _, { create, sumBy } from 'lodash'
 
 import CardsDashboard from "../../components/CardsDashboard"
-import graph from '../../assets/graph.jpg'
 import api from '../../utils/api'
 
 import './Dashboard.css'
@@ -21,6 +22,8 @@ interface IUserExpanses {
 
 export default function Dashboard() {
   const [expanses, setExpanses] = useState<IUserExpanses[]>()
+  const [chartData, setChartData] = useState<IUserExpanses[]>([])
+  const [chartBarData, setBarChartData] = useState<IUserExpanses[]>([])
   const [entryExpenses, setEntryExpanses] = useState<number>()
   const [outGoingExpanses, setOutGoingExpanses] = useState<number>()
   const [total, setTotal] = useState<number>()
@@ -37,7 +40,8 @@ export default function Dashboard() {
       }).catch(err => console.log(err))
 
       setExpanses(data)
-      loadData(data)
+      setChartData(loadData(data))
+      setBarChartData(loadBarData(data))
     }
 
     fetchUserExpanses()
@@ -65,9 +69,24 @@ export default function Dashboard() {
     sumTotal()
   })
 
-  const loadData = async (data: IUserExpanses[]) => {
-    const values = _.groupBy(data, (value) => {
+  const loadBarData: any = (data: IUserExpanses[]) => {
+    const types = _.groupBy(data, (value) => {
       return value.expanseType
+    })
+
+    const result = _.map(types, (value, key) => {
+      return [
+        key,
+        _.sumBy(types[key], v => parseFloat(v.amount))
+      ]
+    })
+
+    return [["Entradas", "Saidas"], ...result]
+  }
+
+  const loadData: any = (data: IUserExpanses[]) => {
+    const values = _.groupBy(data, (value) => {
+      return value.type
     })
 
     const result = _.map(values, (value, key) => {
@@ -77,7 +96,13 @@ export default function Dashboard() {
       ]
     })
 
-    console.log(result)
+    return [["Entradas", "Saídas"], ...result]
+  }
+
+  var options = {
+    backgroundColor: 'transparent',
+    legend: { textStyle: { color: '#fff', fontSize: 15 } },
+    colors: ['#4dc48c', '#000', '#ddd', '#004', '#f00', '#f0f', '#00f', '#046447' ]
   }
 
   return(
@@ -110,7 +135,23 @@ export default function Dashboard() {
           />
         </div>
 
-        <img style={{ marginTop: '70px' }} height={580} width={800} src={graph} alt="" />
+        <div className='div-charts'>
+          <Chart
+            chartType="PieChart"
+            width="100%"
+            height="260px"
+            data={chartData}
+            options={options}
+          />
+
+          <Chart
+            chartType="PieChart"
+            width="100%"
+            height="260px"
+            data={chartBarData}
+            options={options}
+          />
+        </div>
       </div>
 
       <div className='table-div'>
