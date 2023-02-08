@@ -1,11 +1,14 @@
 import { PlusCircle, MinusCircle, CurrencyCircleDollar, File } from 'phosphor-react'
 import { DrawerMenu } from '../../components/DrawerMenu'
 import { useEffect, useState } from 'react'
+import { TableExpanse } from '../../components/TableExpanse'
+import _ from 'lodash'
+
 import CardsDashboard from "../../components/CardsDashboard"
 import graph from '../../assets/graph.jpg'
-import './Dashboard.css'
 import api from '../../utils/api'
-import { TableExpanse } from '../../components/TableExpanse'
+
+import './Dashboard.css'
 
 interface IUserExpanses {
   amount: string,
@@ -34,6 +37,7 @@ export default function Dashboard() {
       }).catch(err => console.log(err))
 
       setExpanses(data)
+      loadData(data)
     }
 
     fetchUserExpanses()
@@ -60,6 +64,21 @@ export default function Dashboard() {
     sumExpanses()
     sumTotal()
   })
+
+  const loadData = async (data: IUserExpanses[]) => {
+    const values = _.groupBy(data, (value) => {
+      return value.expanseType
+    })
+
+    const result = _.map(values, (value, key) => {
+      return [
+        key,
+        _.sumBy(values[key], (v) => parseFloat(v.amount))
+      ]
+    })
+
+    console.log(result)
+  }
 
   return(
 
