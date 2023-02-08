@@ -13,6 +13,7 @@ interface IUserExpanses {
   expanseType: string,
   date: string,
   description: string
+  createdAt: Date
 }
 
 export default function Dashboard() {
