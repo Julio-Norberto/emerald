@@ -18,8 +18,8 @@ table {
   border-collapse: collapse;
   width: 600px;
   margin-bottom: 30px;
-  -webkit-backdrop-filter: blur(14px) saturate(200%);
-  background-color: rgba(87, 91, 104, 0.43);
+  background: #130f10;
+  box-shadow: 10px 10px 10px black;
   border-radius: 12px;
 }
 

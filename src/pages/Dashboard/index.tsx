@@ -4,14 +4,14 @@ import { useEffect, useState } from 'react'
 import { TableExpanse } from '../../components/TableExpanse'
 import { Chart } from 'react-google-charts'
 
-import _, { create, sumBy } from 'lodash'
+import _ from 'lodash'
 
 import CardsDashboard from "../../components/CardsDashboard"
 import api from '../../utils/api'
 
 import './Dashboard.css'
 
-interface IUserExpanses {
+export interface IUserExpanses {
   amount: string,
   type: string,
   expanseType: string,
@@ -40,8 +40,9 @@ export default function Dashboard() {
       }).catch(err => console.log(err))
 
       setExpanses(data)
-      setChartData(loadData(data))
+      setChartData(newArray(data))
       setBarChartData(loadBarData(data))
+      newArray(data)
     }
 
     fetchUserExpanses()
@@ -84,25 +85,26 @@ export default function Dashboard() {
     return [["Entradas", "Saidas"], ...result]
   }
 
-  const loadData: any = (data: IUserExpanses[]) => {
-    const values = _.groupBy(data, (value) => {
-      return value.type
-    })
+   const newArray: any = (data: IUserExpanses[]) => {
+     const arr = data.map((value, key) => {
+       if(value.expanseType === 'saida') {
+         return [value.type, value.amount]
+       }
+     })
 
-    const result = _.map(values, (value, key) => {
-      return [
-        key,
-        _.sumBy(values[key], (v) => parseFloat(v.amount))
-      ]
-    })
+     const filetered = arr.filter(function(x) {
+       return x !== undefined
+     })
 
-    return [["Categoria", "Percetual"], ...result]
-  }
+     console.log(filetered)
+     return [["Tipo", "Total"], ...filetered]
+   }
 
   var options = {
     backgroundColor: 'transparent',
     legend: { textStyle: { color: '#fff', fontSize: 15 } },
-    colors: ['#4dc48c', '#000', '#ddd', '#004', '#f00', '#f0f', '#00f', '#046447' ]
+    colors: ['#4dc48c', '#dc3913', '#990999', '#f0f', '#3366cc', '#046447' ],
+    is3D: true
   }
 
   return(
@@ -135,23 +137,28 @@ export default function Dashboard() {
           />
         </div>
 
-        <div className='div-charts'>
-          <Chart
-            chartType="PieChart"
-            width="100%"
-            height="260px"
-            data={chartData}
-            options={options}
-          />
+        <div className='section-chart'>
+          <h2>Gráfico de gastos e Saldo total</h2>
+          <div className='div-charts'>
+            <Chart
+              chartType="PieChart"
+              width="500px"
+              height="400px"
+              data={chartData}
+              options={options}
+            />
 
-          <Chart
-            chartType="PieChart"
-            width="100%"
-            height="260px"
-            data={chartBarData}
-            options={options}
-          />
+            <Chart
+              chartType="PieChart"
+              width="500px"
+              height="400px"
+              data={chartBarData}
+              options={options}
+            />
+
+          </div>
         </div>
+
       </div>
 
       <div className='table-div'>
