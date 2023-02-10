@@ -1,5 +1,5 @@
 import './registerExpanse.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { DrawerMenu } from '../../components/DrawerMenu'
 import { TableExpanse } from '../../components/TableExpanse'
 import { Message } from '../../components/Message'
@@ -11,11 +11,12 @@ export default function RegisterExpanse() {
   const [expanseCategory, setExpanseCategory] = useState<string>()
   const [date, setDate] = useState<string>()
   const [description, setDescription] = useState<string>()
-
+  const [changed, setChanged] = useState(false)
   const { registerExpanse } = useExpanse()
 
   function handleRegisterExpanse() {
     registerExpanse(amount!, expanseType, expanseCategory!, date!, description!)
+    setChanged(!changed)
   }
 
   return(
@@ -73,8 +74,8 @@ export default function RegisterExpanse() {
 
           <div>
           {/* INICIO DA TABELA */}
-          <TableExpanse title='Saídas recentes' type='saida' action={true} />
-          <TableExpanse title='Entradas recentes' type='entrada' action={true} />
+          <TableExpanse title='Saídas recentes' type='saida' action={true} changed={changed} />
+          <TableExpanse title='Entradas recentes' type='entrada' action={true} changed={changed} />
           {/* FIM DA TABELA */}
           </div>
 

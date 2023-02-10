@@ -1,6 +1,5 @@
 import { createContext } from "react";
 import { useAuth } from "../hooks/useAuth";
-import { IUser } from '../hooks/useAuth'
 
 interface IUserContext {
   register: (name: string, email: string, password: string, confirmPassword: string) => Promise<void>,
