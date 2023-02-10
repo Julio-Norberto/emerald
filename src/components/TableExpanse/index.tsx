@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { Trash, Pencil } from 'phosphor-react'
 import { useFlashMessages } from '../../hooks/useFlashMessages.js'
 import { useNavigate } from 'react-router-dom'
+import React from 'react'
 
 type tableComponent = {
   title: string
@@ -22,6 +23,7 @@ interface dataExpanse {
 
 export const TableExpanse: React.FC<tableComponent> = ({ type, title, action }) => {
   const [data, setData] = useState<dataExpanse[]>()
+  const [deleted, setDeleted] = useState(false)
   const { setFlashMessage } = useFlashMessages()
   const navigate = useNavigate()
 
@@ -39,7 +41,11 @@ export const TableExpanse: React.FC<tableComponent> = ({ type, title, action }) 
     }
 
     fetchUserExpanses()
-  }, [])
+
+    // return () => {
+    //   setData([])
+    // }
+  }, [deleted])
 
   async function handleDelete(id: string) {
     const token = localStorage.getItem('token')
@@ -51,7 +57,7 @@ export const TableExpanse: React.FC<tableComponent> = ({ type, title, action }) 
     })
 
     setFlashMessage('Dado excluído com sucesso!', 'success')
-    navigate(0)
+    setDeleted(!deleted)
   }
 
   return (
