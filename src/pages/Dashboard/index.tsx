@@ -103,7 +103,7 @@ export default function Dashboard() {
   var options = {
     backgroundColor: 'transparent',
     legend: { textStyle: { color: '#fff', fontSize: 15 } },
-    colors: ['#4dc48c', '#dc3913', '#990999', '#f0f', '#3366cc', '#046447' ],
+    colors: ['#4dc48c', '#e02b00', '#990999', '#f0f', '#3366cc', '#046447' ],
     is3D: true
   }
 
@@ -142,7 +142,7 @@ export default function Dashboard() {
           <div className='div-charts'>
             <Chart
               chartType="PieChart"
-              width="500px"
+              width="100%"
               height="400px"
               data={chartData}
               options={options}
@@ -150,7 +150,7 @@ export default function Dashboard() {
 
             <Chart
               chartType="PieChart"
-              width="500px"
+              width="100%"
               height="400px"
               data={chartBarData}
               options={options}
