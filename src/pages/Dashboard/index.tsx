@@ -24,9 +24,9 @@ export default function Dashboard() {
   const [expanses, setExpanses] = useState<IUserExpanses[]>()
   const [chartData, setChartData] = useState<IUserExpanses[]>([])
   const [chartBarData, setBarChartData] = useState<IUserExpanses[]>([])
-  const [entryExpenses, setEntryExpanses] = useState<number>()
-  const [outGoingExpanses, setOutGoingExpanses] = useState<number>()
-  const [total, setTotal] = useState<number>()
+  const [entryExpenses, setEntryExpanses] = useState<number>(0)
+  const [outGoingExpanses, setOutGoingExpanses] = useState<number>(0)
+  const [total, setTotal] = useState<number>(0)
 
   useEffect(() => {
     async function fetchUserExpanses() {
@@ -132,7 +132,7 @@ export default function Dashboard() {
           <CardsDashboard
             background={'linear-gradient(47deg, rgba(20,16,16,1) 76%, #fffb04 120%, #fffb04) 100%'}
             icon={ <CurrencyCircleDollar size={72} color='yellow' /> }
-            total={ expanses && total && total > 0 ? `R$ +${total}` : expanses && total && total < 0 ? `R$ -${total}` : '0'}
+            total={ expanses && total && total > 0 ? `R$ +${total}` : expanses && total && total < 0 ? `R$ ${total}` : '0'}
             desc='Saldo total'
           />
         </div>
