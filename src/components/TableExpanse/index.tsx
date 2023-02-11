@@ -1,7 +1,7 @@
 import './tableExpanse.css'
 import api from '../../utils/api'
 import { useEffect, useState } from 'react'
-import { Trash, Pencil } from 'phosphor-react'
+import { Trash, Pencil, File } from 'phosphor-react'
 import { useFlashMessages } from '../../hooks/useFlashMessages.js'
 import React from 'react'
 
@@ -10,6 +10,8 @@ type tableComponent = {
   type?: string
   action: boolean
   changed?: boolean
+  height?: string
+  maxHeight?: string
 }
 
 interface dataExpanse {
@@ -21,7 +23,7 @@ interface dataExpanse {
   description: string
 }
 
-export const TableExpanse: React.FC<tableComponent> = ({ type, title, action, changed }) => {
+export const TableExpanse: React.FC<tableComponent> = ({ type, title, action, changed, height, maxHeight }) => {
   const [data, setData] = useState<dataExpanse[]>()
   const [deleted, setDeleted] = useState(false)
   const { setFlashMessage } = useFlashMessages()
@@ -60,8 +62,10 @@ export const TableExpanse: React.FC<tableComponent> = ({ type, title, action, ch
   }
 
   return (
-    <div className='expansive-table'>
-      <h2 style={{ marginBottom: '30px' }} > {title} </h2>
+    <>
+    <h2 style={{ marginTop: '28px', textAlign: 'center' }} > {title} </h2>
+    <div className='expansive-table' style={{ height: height }}>
+      <div className='div-scroll' style={{ maxHeight: maxHeight }}>
       <table>
         <thead>
         <tr>
@@ -99,6 +103,10 @@ export const TableExpanse: React.FC<tableComponent> = ({ type, title, action, ch
           ) : ''
         )) }
       </table>
+      </div>
+
+      { action ? '' : data!?.length > 0 ? <button className='btn-pdf'>Exportar PDF <File color='#fff' size={20} style={{ marginLeft: '10px' }} /> </button> : 'Nenhuma despesa cadastrada...' }
     </div>
+    </>
   )
 }

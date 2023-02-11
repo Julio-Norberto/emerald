@@ -137,7 +137,8 @@ export default function Dashboard() {
           />
         </div>
 
-        <div className='section-chart'>
+        { chartData.length > 0 && chartBarData.length > 0 ? (
+          <div className='section-chart'>
           <h2>Gráfico de gastos e Saldo total</h2>
           <div className='div-charts'>
             <Chart
@@ -158,12 +159,12 @@ export default function Dashboard() {
 
           </div>
         </div>
+        ) : '' }
 
       </div>
 
       <div className='table-div'>
-        <TableExpanse title='Todas as despesas' action={false} />
-        <button className='btn-pdf' >Exportar PDF <File color='#fff' size={20} style={{ marginLeft: '10px' }} /> </button>
+        <TableExpanse title='Todas as despesas' action={false} height='700px' maxHeight='60%' />
       </div>
 
     </div>
