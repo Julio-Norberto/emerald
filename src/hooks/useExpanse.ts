@@ -1,12 +1,10 @@
 import api from "../utils/api"
 
 import { useFlashMessages } from '../hooks/useFlashMessages'
-import { useNavigate } from 'react-router-dom'
 import { useState } from "react"
 
 export const useExpanse = () => {
   const { setFlashMessage } = useFlashMessages()
-  const [change, setChange] = useState(false)
 
   const registerExpanse = async(amount: string, expanseType: 'entrada' | 'saida', expanseCategory: string, date: string, description: string ) => {
     const token = localStorage.getItem('token')
@@ -29,8 +27,7 @@ export const useExpanse = () => {
     }
 
     setFlashMessage('Registro cadastrado com sucesso!', 'success')
-    setChange(!change)
   }
 
-  return { registerExpanse, change }
+  return { registerExpanse }
 }

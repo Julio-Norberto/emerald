@@ -3,14 +3,13 @@ import api from '../../utils/api'
 import { useEffect, useState } from 'react'
 import { Trash, Pencil } from 'phosphor-react'
 import { useFlashMessages } from '../../hooks/useFlashMessages.js'
-import { useExpanse } from '../../hooks/useExpanse.js'
 import React from 'react'
 
 type tableComponent = {
   title: string
   type?: string
   action: boolean
-  changed: boolean
+  changed?: boolean
 }
 
 interface dataExpanse {
@@ -26,7 +25,6 @@ export const TableExpanse: React.FC<tableComponent> = ({ type, title, action, ch
   const [data, setData] = useState<dataExpanse[]>()
   const [deleted, setDeleted] = useState(false)
   const { setFlashMessage } = useFlashMessages()
-  const { change } = useExpanse()
 
   useEffect(() => {
     async function fetchUserExpanses() {
