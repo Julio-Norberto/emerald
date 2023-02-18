@@ -3,6 +3,8 @@ import api from '../../utils/api'
 import { useEffect, useState } from 'react'
 import { Trash, Pencil, File } from 'phosphor-react'
 import { useFlashMessages } from '../../hooks/useFlashMessages.js'
+
+import { pdfAmount } from '../../utils/pdf-amount'
 import React from 'react'
 
 type tableComponent = {
@@ -61,6 +63,12 @@ export const TableExpanse: React.FC<tableComponent> = ({ type, title, action, ch
     setDeleted(!deleted)
   }
 
+  function generatePdf() {
+    if(data) {
+      pdfAmount(data)
+    }
+  }
+
   return (
     <>
     <h2 style={{ marginTop: '28px', textAlign: 'center' }} > {title} </h2>
@@ -105,7 +113,7 @@ export const TableExpanse: React.FC<tableComponent> = ({ type, title, action, ch
       </table>
       </div>
 
-      { action ? '' : data!?.length > 0 ? <button className='btn-pdf'>Exportar PDF <File color='#fff' size={20} style={{ marginLeft: '10px' }} /> </button> : 'Nenhuma despesa cadastrada...' }
+      { action ? '' : data!?.length > 0 ? <button onClick={generatePdf} className='btn-pdf'>Exportar PDF <File color='#fff' size={20} style={{ marginLeft: '10px' }} /> </button> : 'Nenhuma despesa cadastrada...' }
     </div>
     </>
   )
