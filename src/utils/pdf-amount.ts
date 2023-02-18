@@ -1,8 +1,8 @@
 import pdfMake from 'pdfmake/build/pdfmake'
 import pdfFonts from 'pdfmake/build/vfs_fonts'
-import { IUserExpanses } from '../pages/Dashboard'
+import { IDataExpanse } from '../components/TableExpanse'
 
-export const pdfAmount = (amounts: IUserExpanses[]) => {
+export const pdfAmount = (amounts: IDataExpanse[]) => {
   pdfMake.vfs = pdfFonts.pdfMake.vfs
 
   const reportTitle = [

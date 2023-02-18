@@ -16,7 +16,7 @@ type tableComponent = {
   maxHeight?: string
 }
 
-interface dataExpanse {
+export interface IDataExpanse {
   _id?: string
   amount: string,
   type: string,
@@ -26,7 +26,7 @@ interface dataExpanse {
 }
 
 export const TableExpanse: React.FC<tableComponent> = ({ type, title, action, changed, height, maxHeight }) => {
-  const [data, setData] = useState<dataExpanse[]>()
+  const [data, setData] = useState<IDataExpanse[]>()
   const [deleted, setDeleted] = useState(false)
   const { setFlashMessage } = useFlashMessages()
 
