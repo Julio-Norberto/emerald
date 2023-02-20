@@ -28,10 +28,10 @@
     bottom: -440px;
     right: 7px;
     border-radius: 100%;
-    
+
     background-color: #191E29;
-    background-image: 
-        radial-gradient(at 57% 43%, rgb(0, 255, 179) 0, transparent 100%), 
+    background-image:
+        radial-gradient(at 57% 43%, rgb(0, 255, 179) 0, transparent 100%),
         radial-gradient(at 22% 15%, hsl(218.00, 39%, 11%) 0, transparent 95%);
 
 
@@ -40,4 +40,11 @@
     -o-filter: blur(95px);
     -ms-filter: blur(95px);
     filter: blur(95px);
+}
+
+@media (max-width: 1400px) {
+  .whyUs-cards {
+    margin-top: 30px;
+    justify-content: space-between;
+  }
 }

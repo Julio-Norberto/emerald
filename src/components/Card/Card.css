@@ -18,3 +18,21 @@
     font-size: 1.1em;
     font-family: 'Poppins', sans-serif;
 }
+
+@media (max-width: 1400px) {
+  .card-container {
+    width: 100%;
+  }
+
+  .card-text {
+    width: 90%;
+  }
+
+  .card-text h3 {
+    font-size: 18px;
+  }
+
+  .card-text p {
+    font-size: 12px;
+  }
+}
