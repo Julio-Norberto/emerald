@@ -36,3 +36,9 @@
     font-size: 12px;
   }
 }
+
+@media (min-width: 300px) and (max-width: 700px) {
+  .card-container {
+    margin-bottom: 50px;
+  }
+}

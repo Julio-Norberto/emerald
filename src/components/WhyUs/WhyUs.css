@@ -48,3 +48,20 @@
     justify-content: space-between;
   }
 }
+
+@media (min-width: 300px) and (max-width: 700px) {
+  .whyUs-title h2 {
+    font-size: 0.9em;
+    text-align: center;
+  }
+
+  .whyUs-cards {
+    flex-direction: column;
+    margin-top: -20px;
+  }
+
+  .icon-card {
+    width: 60px;
+    margin-bottom: -10px;
+  }
+}
