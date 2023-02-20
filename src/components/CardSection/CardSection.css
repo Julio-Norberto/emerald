@@ -23,3 +23,18 @@
     font-family: 'Poppins', sans-serif;
     text-align: justify;
 }
+
+@media (max-width: 1400px) {
+  .cardSection-image img {
+    width: 500px;
+  }
+
+  .cardSection-text h2 {
+    font-size: 28px;
+  }
+
+  .cardSection-text p {
+    font-size: 18px;
+  }
+
+}
