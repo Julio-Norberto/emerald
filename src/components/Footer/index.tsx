@@ -9,7 +9,7 @@ export default function Footer() {
             <div className='social'>
                 <a target="_blank" href="https://www.linkedin.com/in/julio-norberto/"> <LinkedinLogo size={32} color="#01C38D" /> </a>
                 <a target="_blank" href="https://www.instagram.com/julionorberto_s/"> <InstagramLogo size={32} color="#01C38D" /> </a>
-                <a target="_blank" href=""> <WhatsappLogo size={32} color="#01C38D" /> </a>
+                <a target="_blank" href="https://wa.me/5581997187061"> <WhatsappLogo size={32} color="#01C38D" /> </a>
             </div>
         </footer>
     )
