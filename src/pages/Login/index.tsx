@@ -14,7 +14,7 @@ export default function Login() {
 
   return (
     <div className='login-container'>
-      <form className='form-card'>
+      <form className='form-card, login-form-card'>
 
         <div className='login-title-div'>
             <h2 className='login-title'>Faça Login e aproveite o Emerald!</h2>

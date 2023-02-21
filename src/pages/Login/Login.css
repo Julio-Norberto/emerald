@@ -8,18 +8,20 @@
     background-image: radial-gradient( circle farthest-corner at 10% 20%,  hsl(221, 24%, 13%) 0.1%, rgb(0, 60, 44) 94.2% );
 }
 
-.form-card {
-    width: 520px;
-    height: 610px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    backdrop-filter: blur(5px) saturate(180%);
-    -webkit-backdrop-filter: blur(5px) saturate(180%);
-    background-color: rgba(17, 25, 40, 0.17);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.125);
+
+
+.login-form-card {
+  width: 520px;
+  height: 610px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px) saturate(180%);
+  -webkit-backdrop-filter: blur(5px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.17);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
 }
 
 .login-title-div {
@@ -84,4 +86,18 @@
     transition: 1000ms;
     padding: 8px 75px;
     cursor: pointer;
+}
+
+@media (min-width: 300px) and (max-width: 700px) {
+  .login-form-card {
+    width: 90%;
+    height: 450px;
+  }
+
+  .login-title {
+    background-image: linear-gradient(to bottom, #fff, rgba(0,255,184,1), rgb(17, 175, 101));
+    text-align: center;
+    margin-top: 38px;
+    margin-bottom: -20px;
+  }
 }
