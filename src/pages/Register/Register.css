@@ -94,3 +94,18 @@
 .login-link:hover {
     color: #0cfbb7;
 }
+
+@media (min-width: 300px) and (max-width: 700px) {
+  .form-card {
+    width: 90%;
+  }
+
+  .form-card h2 {
+    text-align: center;
+    background-image: linear-gradient(to bottom, #fff, rgba(0,255,184,1), rgba(0,255,184,1));
+  }
+
+  .div-input input {
+    width: 300px;
+  }
+}
