@@ -1,27 +1,27 @@
 .cardSection-container {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 100px;
 }
 
 .cardSection-text {
-    width: 40%;
-    text-align: center;
+  width: 40%;
+  text-align: center;
 }
 
 .cardSection-text h2 {
-    font-size: 2.5em;
-    margin-bottom: 35px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 2.5em;
+  margin-bottom: 35px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .cardSection-text p {
-    font-size: 1.3em;
-    color: #8e99b2;
-    font-family: 'Poppins', sans-serif;
-    text-align: justify;
+  font-size: 1.3em;
+  color: #8e99b2;
+  font-family: 'Poppins', sans-serif;
+  text-align: justify;
 }
 
 @media (max-width: 1400px) {
@@ -37,4 +37,26 @@
     font-size: 18px;
   }
 
+}
+
+@media (min-width: 300px) and (max-width: 700px) {
+  .cardSection-container {
+    flex-direction: column !important;
+  }
+
+  .cardSection-text {
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .cardSection-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card-image {
+    height: 350px;
+  }
 }

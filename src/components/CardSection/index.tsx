@@ -10,19 +10,19 @@ interface ICardSectionProps {
 
 export default function CardSection(props: ICardSectionProps) {
     const style: React.CSSProperties | any = {
-        flexDirection: props.direction
+      flexDirection: props.direction
     }
 
     return (
-        <div style={style} className='cardSection-container'>
-            <div className='cardSection-image'>
-                <img width={650} src={props.image} alt="" />
-            </div>
-
-            <div className='cardSection-text'>
-                <h2> {props.title} </h2>
-                <p> {props.description} </p>
-            </div>
+      <div style={style} className='cardSection-container'>
+        <div className='cardSection-image'>
+          <img className='card-image' width={650} src={props.image} alt="" />
         </div>
+
+        <div className='cardSection-text'>
+          <h2> {props.title} </h2>
+          <p> {props.description} </p>
+        </div>
+      </div>
     )
 }
