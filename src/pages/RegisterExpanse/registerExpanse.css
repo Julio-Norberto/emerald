@@ -1,3 +1,8 @@
+* {
+  overflow: auto;
+  overflow-x: hidden;
+}
+
 .expanse-container {
   padding-left: 320px;
   width: 80%;
@@ -26,6 +31,7 @@
 .input-form input {
   width: 400px;
   height: 30px;
+  padding-left: 4px;
   margin-bottom: 30px;
 }
 
@@ -54,4 +60,40 @@
 .btn-register-expanse:hover {
   cursor: pointer;
   background-color: #313744;
+}
+
+@media(max-width: 1400px) {
+  .form-container {
+    align-items: start;
+  }
+
+  .inputs h1 {
+    margin-top: 25px;
+  }
+
+  .input-form {
+    margin-bottom: -10px;
+  }
+
+  .input-form input {
+    width: 300px;
+  }
+
+  .input-form textarea {
+    width: 308px;
+  }
+
+  .input-select {
+    width: 308px;
+  }
+
+  .btn-register-expanse {
+    width: 314px;
+    margin-top: 25px;
+  }
+
+  .table-with-divs {
+    margin-right: 60px;
+    margin-bottom: 60px;
+  }
 }

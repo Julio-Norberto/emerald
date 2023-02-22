@@ -37,7 +37,7 @@ export default function RegisterExpanse() {
 
             <div style={{ marginBottom: '20px' }} className='input-form'>
               <label htmlFor="expanseType">Informe o tipo da despesa</label>
-              <select style={{ height: '30px' }} value={expanseType} onChange={e => setExpanseType(e.target.value as "entrada" | "saida")}>
+              <select className='input-select' style={{ height: '30px' }} value={expanseType} onChange={e => setExpanseType(e.target.value as "entrada" | "saida")}>
                 <option value="entrada">Entrada</option>
                 <option value="saida">Saída</option>
               </select>
@@ -72,7 +72,7 @@ export default function RegisterExpanse() {
 
           </div>
 
-          <div>
+          <div className='table-with-divs'>
           {/* INICIO DA TABELA */}
           <TableExpanse title='Saídas recentes' type='saida' action={true} changed={changed} height='320px' maxHeight='100%' />
           <TableExpanse title='Entradas recentes' type='entrada' action={true} changed={changed} height='320px' maxHeight='100%' />
