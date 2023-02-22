@@ -138,7 +138,7 @@ export default function Dashboard() {
         </div>
 
         { chartData.length > 0 && chartBarData.length > 0 ? (
-          <div className='section-chart'>
+        <div className='section-chart'>
           <h2>Gráfico de gastos e Saldo total</h2>
           <div className='div-charts'>
             <Chart

@@ -76,6 +76,10 @@ th {
 
 @media (max-width: 1400px) {
   table {
-    width: 500px;
+    width: 100%;
+  }
+
+  .div-scroll {
+    width: 100%;
   }
 }

@@ -57,3 +57,25 @@
   box-shadow: 10px 10px 10px black;
   border-radius: 12px;
 }
+
+@media (max-width: 1400px) {
+  .primary-div {
+    flex-direction: column;
+    padding-left: 70px;
+  }
+
+  .dashboard-content {
+    width: 80%;
+  }
+
+  .section-chart {
+    width: 970px;
+  }
+
+  .table-div {
+    width: 910px;
+    padding-left: 250px;
+    margin-bottom: 60px;
+    align-items: baseline;
+  }
+}

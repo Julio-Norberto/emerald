@@ -1,5 +1,5 @@
-* {
-  overflow: auto;
+.scroll {
+  height: 100vh;
   overflow-x: hidden;
 }
 
@@ -93,7 +93,7 @@
   }
 
   .table-with-divs {
-    margin-right: 60px;
+    margin-right: 80px;
     margin-bottom: 60px;
   }
 }

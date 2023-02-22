@@ -20,7 +20,7 @@ export default function RegisterExpanse() {
   }
 
   return(
-    <div>
+    <div className='scroll'>
       <DrawerMenu />
       <div className='expanse-container'>
         <Message />
