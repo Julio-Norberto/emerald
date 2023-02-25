@@ -83,3 +83,17 @@ th {
     width: 100%;
   }
 }
+
+@media (min-width: 300px) and (max-width: 700px) {
+  th {
+    font-size: 12px;
+  }
+
+  td {
+    font-size: 12px;
+  }
+
+  .btn-pdf {
+    margin-top: 60px;
+  }
+}

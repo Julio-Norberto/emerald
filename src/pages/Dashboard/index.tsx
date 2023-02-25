@@ -10,6 +10,7 @@ import CardsDashboard from "../../components/CardsDashboard"
 import api from '../../utils/api'
 
 import './Dashboard.css'
+import { useMediaQuery } from '@mui/material'
 
 export interface IUserExpanses {
   amount: string,
@@ -107,6 +108,8 @@ export default function Dashboard() {
     is3D: true
   }
 
+  const matches = useMediaQuery("(min-width:600px)");
+
   return(
 
     <div className='primary-div'>
@@ -123,18 +126,21 @@ export default function Dashboard() {
             total={ expanses ? `R$ ${entryExpenses!?.toString()}` : '0'}
             desc='Total de entradas'
           />
+
           <CardsDashboard
             background={'linear-gradient(47deg, rgba(20,16,16,1) 76%, #c10404 120%, #c10404) 100%'}
             icon={ <MinusCircle size={72} color='red' /> }
             total={ expanses ? `R$ ${outGoingExpanses!?.toString()}` : '0'}
             desc='Total de saídas'
           />
-          <CardsDashboard
+
+         <CardsDashboard
             background={'linear-gradient(47deg, rgba(20,16,16,1) 76%, #fffb04 120%, #fffb04) 100%'}
             icon={ <CurrencyCircleDollar size={72} color='yellow' /> }
             total={ expanses && total && total > 0 ? `R$ +${total}` : expanses && total && total < 0 ? `R$ ${total}` : '0'}
             desc='Saldo total'
           />
+
         </div>
 
         { chartData.length > 0 && chartBarData.length > 0 ? (
@@ -164,7 +170,7 @@ export default function Dashboard() {
       </div>
 
       <div className='table-div'>
-        <TableExpanse title='Todas as despesas' action={false} height='700px' maxHeight='60%' />
+        <TableExpanse title='Todas as despesas' action={false} height={ matches ? '700px' : '500px' } maxHeight='60%' />
       </div>
 
     </div>

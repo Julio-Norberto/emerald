@@ -39,11 +39,10 @@ export const DrawerMenu = React.memo((DrawerMenu: any) => {
         aria-label='open drawer'
         onClick={handleDrawerOpen}
         edge='start'
-        sx={{ ...(open && { display: 'none' }), marginLeft: '-400px' }}
+        sx={{ ...(open && { display: 'none' }), marginLeft: '-340px' }}
       >
         <MenuIcon />
       </IconButton>
-
 
       <Drawer open={open} variant={"persistent"}>
         <DrawHeader>

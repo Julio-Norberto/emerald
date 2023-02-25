@@ -79,3 +79,47 @@
     align-items: baseline;
   }
 }
+
+@media (min-width: 300px) and (max-width: 700px) {
+  .primary-div {
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .dashboard-content {
+    padding: 0;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .dashboard-cards {
+    width: 90%;
+    justify-content: right;
+    margin-left: 15px;
+  }
+
+  .section-chart {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .section-chart h2 {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .div-charts {
+    width: 95%;
+    flex-direction: column;
+    margin-left: 8px;
+  }
+
+  .table-div {
+    width: 95%;
+    padding: 0;
+    align-items: center;
+  }
+}
