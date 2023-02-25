@@ -1,14 +1,57 @@
-import { Avatar, Divider, Drawer, List, ListItemButton, ListItemIcon, Icon, ListItemText } from "@mui/material"
+import { ChevronLeft, ChevronRight } from "@mui/icons-material"
+import { Avatar, Divider, Drawer, List, ListItemButton, ListItemIcon, Icon, ListItemText, styled, IconButton, useTheme, AppBar, Toolbar, Typography, CssBaseline, useMediaQuery } from "@mui/material"
 import { Box } from "@mui/system"
-import React from "react"
+import React, { useState } from "react"
 import { useNavigate } from 'react-router-dom'
 
+import MenuIcon from '@mui/icons-material/Menu'
+
+const DrawHeader = styled('div')(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  padding: theme.spacing(0, 1),
+  ... theme.mixins.toolbar,
+  justifyContent: 'flex-end',
+  backgroundColor: '#141010',
+  accentColor: '#fff'
+}))
+
 export const DrawerMenu = React.memo((DrawerMenu: any) => {
+  const matches = useMediaQuery("(min-width:600px)");
+
   const navigate = useNavigate()
+  const theme = useTheme()
+
+  const [open, setOpen] = useState(true)
+
+  const handleDrawerOpen = () => {
+    setOpen(true)
+  }
+
+  const handleDrawerClose = () => {
+    setOpen(false)
+  }
 
   return(
     <>
-      <Drawer open={true} variant={"persistent"}>
+      <IconButton
+        color='inherit'
+        aria-label='open drawer'
+        onClick={handleDrawerOpen}
+        edge='start'
+        sx={{ ...(open && { display: 'none' }), marginLeft: '-400px' }}
+      >
+        <MenuIcon />
+      </IconButton>
+
+
+      <Drawer open={open} variant={"persistent"}>
+        <DrawHeader>
+          <IconButton onClick={handleDrawerClose} >
+            { matches ? '' : <ChevronLeft color="success" /> }
+          </IconButton>
+        </DrawHeader>
+
         <Box sx={{ backgroundColor: '#141010' }} width='280px' height='100%' display='flex' flexDirection='column'>
           <Box width='100%' height='200px' display='flex' alignItems='center' justifyContent='center'>
             <Avatar sx={{ height: 100, width: 100}} src="https://lh3.googleusercontent.com/a/AEdFTp4MYtISvOobTkI5ltevJbvrCA131r81RAP6pxPyoPA=s288-p-rw-no" />
