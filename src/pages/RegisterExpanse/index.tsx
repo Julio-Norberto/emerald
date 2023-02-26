@@ -21,8 +21,9 @@ export default function RegisterExpanse() {
 
   return(
     <div className='scroll'>
-      <DrawerMenu />
+
       <div className='expanse-container'>
+        <DrawerMenu top='60px' left='30px' />
         <Message />
 
         <div className='form-container'>

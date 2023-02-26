@@ -85,6 +85,7 @@
     padding: 0;
     justify-content: center;
     align-items: center;
+    position: absolute;
   }
 
   .dashboard-content {
@@ -92,6 +93,7 @@
     width: 100%;
     justify-content: center;
     align-items: center;
+
   }
 
   .dashboard-cards {

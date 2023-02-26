@@ -16,7 +16,12 @@ const DrawHeader = styled('div')(({ theme }) => ({
   accentColor: '#fff'
 }))
 
-export const DrawerMenu = React.memo((DrawerMenu: any) => {
+interface IDrawerMenuProps {
+  top?: string
+  left?: string
+}
+
+export const DrawerMenu = React.memo(( {top, left}: IDrawerMenuProps ) => {
   const matches = useMediaQuery("(min-width:600px)");
 
   const navigate = useNavigate()
@@ -39,7 +44,7 @@ export const DrawerMenu = React.memo((DrawerMenu: any) => {
         aria-label='open drawer'
         onClick={handleDrawerOpen}
         edge='start'
-        sx={{ ...(open && { display: 'none' }), marginLeft: '-340px' }}
+        sx={{ ...(open && { display: 'none'}), position: 'relative', top: top, left: left}}
       >
         <MenuIcon />
       </IconButton>
