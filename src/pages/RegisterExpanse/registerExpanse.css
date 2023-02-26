@@ -97,3 +97,28 @@
     margin-bottom: 60px;
   }
 }
+
+@media (min-width: 300px) and (max-width: 700px) {
+  .expanse-container {
+    padding: 0;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: -50px;
+  }
+
+  .form-container {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .table-with-divs {
+    margin: 0;
+    margin-bottom: 60px;
+    padding: 0 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
