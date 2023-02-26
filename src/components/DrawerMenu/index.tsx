@@ -22,7 +22,7 @@ export const DrawerMenu = React.memo((DrawerMenu: any) => {
   const navigate = useNavigate()
   const theme = useTheme()
 
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(matches ? true : false)
 
   const handleDrawerOpen = () => {
     setOpen(true)
