@@ -65,3 +65,9 @@
     margin-bottom: -10px;
   }
 }
+
+@media (min-width: 750px) and (max-width: 1150px) {
+  .icon-card {
+    width: 60px;
+  }
+}
