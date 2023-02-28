@@ -19,15 +19,18 @@ const DrawHeader = styled('div')(({ theme }) => ({
 interface IDrawerMenuProps {
   top?: string
   left?: string
+  tabletLeft?: string
+  tabletTop?: string
 }
 
-export const DrawerMenu = React.memo(( {top, left}: IDrawerMenuProps ) => {
+export const DrawerMenu = React.memo(( {top, left, tabletLeft, tabletTop}: IDrawerMenuProps ) => {
   const matches = useMediaQuery("(min-width:600px)");
+  const matchesTablet = useMediaQuery("min-width:750px")
 
   const navigate = useNavigate()
   const theme = useTheme()
 
-  const [open, setOpen] = useState(matches ? true : false)
+  const [open, setOpen] = useState(matchesTablet ? true : false)
 
   const handleDrawerOpen = () => {
     setOpen(true)
@@ -44,7 +47,7 @@ export const DrawerMenu = React.memo(( {top, left}: IDrawerMenuProps ) => {
         aria-label='open drawer'
         onClick={handleDrawerOpen}
         edge='start'
-        sx={{ ...(open && { display: 'none'}), position: 'relative', top: top, left: left}}
+        sx={{ ...(open && { display: 'none'}), position: 'relative', top: matches ? tabletTop : top, left: matches ? tabletLeft : left}}
       >
         <MenuIcon />
       </IconButton>
@@ -52,7 +55,7 @@ export const DrawerMenu = React.memo(( {top, left}: IDrawerMenuProps ) => {
       <Drawer open={open} variant={"persistent"}>
         <DrawHeader>
           <IconButton onClick={handleDrawerClose} >
-            { matches ? '' : <ChevronLeft color="success" /> }
+            { matchesTablet ? '' : <ChevronLeft color="success" /> }
           </IconButton>
         </DrawHeader>
 

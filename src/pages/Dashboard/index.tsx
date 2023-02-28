@@ -113,7 +113,7 @@ export default function Dashboard() {
   return(
 
     <div className='primary-div'>
-      <DrawerMenu top='10px' left='-150px' />
+      <DrawerMenu top='10px' left='-150px' tabletLeft='-380px' tabletTop='10px' />
       <div className="dashboard-content">
         <div className="dashboard-title">
           <h1>Dashboard</h1>
