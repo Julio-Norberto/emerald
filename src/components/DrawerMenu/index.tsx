@@ -1,4 +1,4 @@
-import { ChevronLeft, ChevronRight } from "@mui/icons-material"
+import { ChevronLeft, ChevronRight, DisabledByDefault } from "@mui/icons-material"
 import { Avatar, Divider, Drawer, List, ListItemButton, ListItemIcon, Icon, ListItemText, styled, IconButton, useTheme, AppBar, Toolbar, Typography, CssBaseline, useMediaQuery } from "@mui/material"
 import { Box } from "@mui/system"
 import React, { useState } from "react"
@@ -24,13 +24,13 @@ interface IDrawerMenuProps {
 }
 
 export const DrawerMenu = React.memo(( {top, left, tabletLeft, tabletTop}: IDrawerMenuProps ) => {
-  const matches = useMediaQuery("(min-width:600px)");
-  const matchesTablet = useMediaQuery("min-width:750px")
+  const matches = useMediaQuery("(min-width:300px) and (max-width: 700px)");
+  const matchesTablet = useMediaQuery("(min-width: 750px) and (max-width: 1150px)")
 
   const navigate = useNavigate()
   const theme = useTheme()
 
-  const [open, setOpen] = useState(matchesTablet ? true : false)
+  const [open, setOpen] = useState(matches || matchesTablet ? false : true)
 
   const handleDrawerOpen = () => {
     setOpen(true)
@@ -47,7 +47,7 @@ export const DrawerMenu = React.memo(( {top, left, tabletLeft, tabletTop}: IDraw
         aria-label='open drawer'
         onClick={handleDrawerOpen}
         edge='start'
-        sx={{ ...(open && { display: 'none'}), position: 'relative', top: matches ? tabletTop : top, left: matches ? tabletLeft : left}}
+        sx={{ ...(open && { display: 'none'}), position: 'relative', top: matches ? top : tabletTop, left: matches ? left : tabletLeft}}
       >
         <MenuIcon />
       </IconButton>
@@ -55,7 +55,7 @@ export const DrawerMenu = React.memo(( {top, left, tabletLeft, tabletTop}: IDraw
       <Drawer open={open} variant={"persistent"}>
         <DrawHeader>
           <IconButton onClick={handleDrawerClose} >
-            { matchesTablet ? '' : <ChevronLeft color="success" /> }
+            { matches || matchesTablet ? <ChevronLeft color="success" />  : '' }
           </IconButton>
         </DrawHeader>
 
