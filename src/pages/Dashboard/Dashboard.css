@@ -93,7 +93,6 @@
     width: 100%;
     justify-content: center;
     align-items: center;
-
   }
 
   .dashboard-cards {
@@ -123,5 +122,34 @@
     width: 95%;
     padding: 0;
     align-items: center;
+  }
+}
+
+@media (min-width: 750px) and (max-width: 1150px) {
+  .primary-div {
+    padding: 0;
+  }
+
+  .dashboard-content {
+    padding-left: 25px;
+    width: 100%;
+  }
+
+  .dashboard-cards {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .div-charts {
+    width: 85%;
+  }
+
+  .table-div {
+    width: 95%;
+    padding: 0;
+    justify-content: center;
+    margin: 0 auto;
+    margin-bottom: 50px;
   }
 }
