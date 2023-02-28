@@ -152,4 +152,8 @@
     margin: 0 auto;
     margin-bottom: 50px;
   }
+
+  .dashboard-title {
+    margin-left: 12px;
+  }
 }
