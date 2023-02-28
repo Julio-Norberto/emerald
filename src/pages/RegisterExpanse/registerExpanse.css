@@ -124,3 +124,22 @@
     align-items: center;
   }
 }
+
+@media (min-width: 750px) and (max-width: 1150px) {
+  .expanse-container {
+    padding: 0;
+    width: 100%;
+    padding-left: 30px;
+    margin-top: 20px;
+  }
+
+  .form-container {
+    justify-content: space-between;
+    margin-right: 0;
+  }
+
+  .table-with-divs {
+    width: 50%;
+    margin-right: 55px;
+  }
+}
