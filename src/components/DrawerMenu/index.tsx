@@ -1,5 +1,5 @@
-import { ChevronLeft, ChevronRight, DisabledByDefault } from "@mui/icons-material"
-import { Avatar, Divider, Drawer, List, ListItemButton, ListItemIcon, Icon, ListItemText, styled, IconButton, useTheme, AppBar, Toolbar, Typography, CssBaseline, useMediaQuery } from "@mui/material"
+import { ChevronLeft } from "@mui/icons-material"
+import { Avatar, Divider, Drawer, List, ListItemButton, ListItemIcon, Icon, ListItemText, styled, IconButton, useTheme, useMediaQuery } from "@mui/material"
 import { Box } from "@mui/system"
 import React, { useState } from "react"
 import { useNavigate } from 'react-router-dom'
@@ -53,15 +53,17 @@ export const DrawerMenu = React.memo(( {top, left, tabletLeft, tabletTop}: IDraw
       </IconButton>
 
       <Drawer open={open} variant={"persistent"}>
-        <DrawHeader>
+        { matches || matchesTablet ? (
+          <DrawHeader>
           <IconButton onClick={handleDrawerClose} >
-            { matches || matchesTablet ? <ChevronLeft color="success" />  : '' }
+            <ChevronLeft color="success" />
           </IconButton>
         </DrawHeader>
+        ) : '' }
 
         <Box sx={{ backgroundColor: '#141010' }} width='280px' height='100%' display='flex' flexDirection='column'>
           <Box width='100%' height='200px' display='flex' alignItems='center' justifyContent='center'>
-            <Avatar sx={{ height: 100, width: 100}} src="https://lh3.googleusercontent.com/a/AEdFTp4MYtISvOobTkI5ltevJbvrCA131r81RAP6pxPyoPA=s288-p-rw-no" />
+            <h1 style={{ color: '#fff', display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }} >Bem vindo ao Emerald!</h1>
           </Box>
 
           <Divider sx={{ color: '#fff', backgroundColor: '#01C38D' }} />
