@@ -8,21 +8,21 @@ export default function Menu() {
     return (
         <div className='menu-container'>
             <div className='logo'>
-                <h1 className='logo-gradient'>Emerald</h1>
+                <Link style={{ textDecoration: 'none' }} to='/'> <h1 className='logo-gradient'>Emerald</h1> </Link>
             </div>
 
             <div className='menu'>
                 <ul>
                     <li>
-                        <Link to=''>Contato</Link>
+                        <Link to='/contato'>Contato</Link>
                     </li>
 
                     <li>
-                        <Link to=''>Donate</Link>
+                        <Link to='/donato'>Donate</Link>
                     </li>
 
                     <li>
-                        <Link to=''>Sobre</Link>
+                        <Link to='/sobre'>Sobre</Link>
                     </li>
 
                     <li>
