@@ -41,14 +41,14 @@ export default function Contact() {
             <a
               style={{ display: 'flex', alignItems: 'center' }}
               target="_blank"
-              href="https://wa.me/5581997187061">
+              href="https://criarmeulink.com.br/u/1677678142">
               <TelegramLogo style={{ marginRight: '8px' }} size={32} color="#01C38D" />
               (81) 99718-7061
             </a>
             <a
               style={{ display: 'flex', alignItems: 'center' }}
               target="_blank"
-              href="https://wa.me/5581997187061">
+              href="https://criarmeulink.com.br/u/1677678220">
               <Envelope style={{ marginRight: '8px' }} size={32} color="#01C38D" />
               contato@julionorberto.tech
             </a>
