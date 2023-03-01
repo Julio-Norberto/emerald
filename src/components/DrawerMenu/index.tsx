@@ -77,6 +77,13 @@ export const DrawerMenu = React.memo(( {top, left, tabletLeft, tabletTop}: IDraw
                 <ListItemText sx={{ color: '#01C38D' }} primary='Dashboard' />
               </ListItemButton>
 
+              <ListItemButton onClick={() => navigate('/')}>
+                <ListItemIcon sx={{ color: '#01C38D' }}>
+                  <Icon>home</Icon>
+                </ListItemIcon >
+                <ListItemText sx={{ color: '#01C38D' }} primary='Voltar para Home' />
+              </ListItemButton>
+
               <ListItemButton onClick={() => navigate('/dashboard/register')}>
                 <ListItemIcon sx={{ color: '#01C38D' }}>
                   <Icon>addcard</Icon>
