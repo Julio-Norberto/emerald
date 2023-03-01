@@ -1,10 +1,12 @@
-import { useContext } from 'react'
 import { Route, Routes as ReactRoutes } from 'react-router-dom'
 import Dashboard from '../pages/Dashboard'
 import Home from '../pages/Home'
 import Login from '../pages/Login'
 import Register from '../pages/Register'
 import RegisterExpanse from '../pages/RegisterExpanse'
+import Contact from '../pages/Contact'
+
+
 import { useAuth } from '../hooks/useAuth'
 
 export default function Routes() {
@@ -17,6 +19,7 @@ export default function Routes() {
           <Route path='/register' element={ <Register /> } />
           <Route path='/dashboard' element={ authenticated ? <Dashboard /> : <Login /> } />
           <Route path='/dashboard/register' element={ authenticated ? <RegisterExpanse /> : <Login /> } />
+          <Route path='/contato' element={ <Contact /> } />
       </ReactRoutes>
   )
 }
