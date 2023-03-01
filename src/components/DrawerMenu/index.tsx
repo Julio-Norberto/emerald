@@ -1,5 +1,5 @@
 import { ChevronLeft } from "@mui/icons-material"
-import { Avatar, Divider, Drawer, List, ListItemButton, ListItemIcon, Icon, ListItemText, styled, IconButton, useTheme, useMediaQuery } from "@mui/material"
+import { Divider, Drawer, List, ListItemButton, ListItemIcon, Icon, ListItemText, styled, IconButton, useTheme, useMediaQuery } from "@mui/material"
 import { Box } from "@mui/system"
 import React, { useState } from "react"
 import { useNavigate } from 'react-router-dom'
@@ -63,7 +63,7 @@ export const DrawerMenu = React.memo(( {top, left, tabletLeft, tabletTop}: IDraw
 
         <Box sx={{ backgroundColor: '#141010' }} width='280px' height='100%' display='flex' flexDirection='column'>
           <Box width='100%' height='200px' display='flex' alignItems='center' justifyContent='center'>
-            <h1 style={{ color: '#fff', display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }} >Bem vindo ao Emerald!</h1>
+            <h1 style={{ color: '#ddd', display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }} >Bem vindo ao Emerald!</h1>
           </Box>
 
           <Divider sx={{ color: '#fff', backgroundColor: '#01C38D' }} />
