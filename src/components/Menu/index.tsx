@@ -18,7 +18,7 @@ export default function Menu() {
                     </li>
 
                     <li>
-                        <Link to='/donato'>Donate</Link>
+                        <Link to='/donate'>Donate</Link>
                     </li>
 
                     <li>
