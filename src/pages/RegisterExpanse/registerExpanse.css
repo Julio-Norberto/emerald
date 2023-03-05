@@ -46,6 +46,10 @@
   height: 100px;
 }
 
+.input-form textarea::placeholder {
+  padding: 8px;
+}
+
 .btn-register-expanse {
   width: 402px;
   margin-top: 20px;
