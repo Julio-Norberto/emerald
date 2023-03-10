@@ -2,11 +2,12 @@ import { useContext, useState } from 'react'
 import { UserCircle, Envelope, Key } from 'phosphor-react'
 import { Message } from '../../components/Message'
 import { Context } from '../../contexts/UserContext.js'
+
 import './Register.css'
 
 export default function Register() {
 
-  const [email, setEmail] = useState<string>()
+  const [login, setLogin] = useState<string>('')
   const [name, setName] = useState<string>()
   const [password, setPassword] = useState<string>()
   const [confirmPassword, setConfirmPass] = useState()
@@ -14,8 +15,8 @@ export default function Register() {
   const { register } = useContext(Context)
 
   async function handleRegister() {
-    register(name!, email!, password!, confirmPassword!)
-  }
+    register(name!, login!, password!, confirmPassword!)
+  };
 
   return (
       <div className='register-container'>
@@ -28,8 +29,8 @@ export default function Register() {
               </div>
 
               <div className='div-input'>
-                  <label className='align'>Seu e-mail <Envelope style={{ marginLeft: 10 }} /> </label>
-                  <input onChange={(e: any) => setEmail(e.target.value)} type="text" name="email" id="email" placeholder="Digite o seu e-mail..." />
+                  <label className='align'>Seu Login <Envelope style={{ marginLeft: 10 }} /> </label>
+                  <input onChange={(e: any) => setLogin(e.target.value)} value={login} type="text" name="login" id="login" placeholder="Digite o seu Login..." />
               </div>
 
               <div className='div-input'>

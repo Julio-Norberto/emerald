@@ -8,8 +8,6 @@
     background-image: radial-gradient( circle farthest-corner at 10% 20%,  hsl(221, 24%, 13%) 0.1%, rgb(0, 60, 44) 94.2% );
 }
 
-
-
 .login-form-card {
   width: 520px;
   height: 610px;

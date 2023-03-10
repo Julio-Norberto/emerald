@@ -5,7 +5,7 @@ import { useFlashMessages } from './useFlashMessages.js'
 
 export interface IUser {
   name: string,
-  email: string,
+  login: string,
   password: string,
   confirmPassword: string,
   token?: string
@@ -24,7 +24,7 @@ export const useAuth = () => {
     }
   }, [])
 
-  const register = async(name: string, email: string, password: string, confirmPassword: string) => {
+  const register = async(name: string, login: string, password: string, confirmPassword: string) => {
     let msgText = 'Cadastro realizado com sucesso!'
     let msgType = 'success'
 
@@ -32,7 +32,7 @@ export const useAuth = () => {
 
       const data: IUser = await api.post('/register', {
         name,
-        email,
+        login,
         password,
         confirmPassword
       })
@@ -51,25 +51,26 @@ export const useAuth = () => {
     }
   }
 
-  const login = async(email: string, password: string) => {
+  const login = async(login: string, password: string) => {
     let msgText = 'Usuário logado com sucesso!'
     let msgType = 'success'
 
     try {
       const data = await api.post('/login', {
-        email,
+        login,
         password
       }).then((response) => {
         return response.data
       })
+      setFlashMessage(msgText, msgType)
 
       await authUser(data)
     } catch(err: any) {
       let msgText = err.response.data.message
       let msgType = 'err'
-    }
 
-    setFlashMessage(msgText, msgType)
+      setFlashMessage(msgText, msgType)
+    }
 
   }
 

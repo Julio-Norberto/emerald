@@ -97,6 +97,7 @@
   }
 
   .table-with-divs {
+    width: 450px;
     margin-right: 80px;
     margin-bottom: 60px;
   }
