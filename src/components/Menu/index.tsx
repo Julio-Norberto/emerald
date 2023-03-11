@@ -22,10 +22,6 @@ export default function Menu() {
                     </li>
 
                     <li>
-                        <Link to='/sobre'>Sobre</Link>
-                    </li>
-
-                    <li>
                       { authenticated ? <Link className='get-started' to='/dashboard' >Dashboard</Link> : <Link className='get-started' to='/register'>Get Started</Link> }
                     </li>
                 </ul>
