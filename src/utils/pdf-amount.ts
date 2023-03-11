@@ -1,10 +1,7 @@
 import pdfMake from 'pdfmake/build/pdfmake.js'
-import pdfFonts from 'pdfmake/build/vfs_fonts.js'
-
 import { IDataExpanse } from '../components/TableExpanse'
 
 export const pdfAmount = (amounts: IDataExpanse[]) => {
-  pdfMake.vfs = pdfFonts.pdfMake.vfs
 
   const reportTitle = [
     {
