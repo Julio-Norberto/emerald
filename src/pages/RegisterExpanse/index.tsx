@@ -6,17 +6,22 @@ import { Message } from '../../components/Message'
 import { useExpanse } from '../../hooks/useExpanse'
 
 export default function RegisterExpanse() {
-  const [amount, setAmount] = useState<string>()
+  const [amount, setAmount] = useState<string>('')
   const [expanseType, setExpanseType] = useState<'entrada' | 'saida'>('entrada')
-  const [expanseCategory, setExpanseCategory] = useState<string>()
-  const [date, setDate] = useState<string>()
-  const [description, setDescription] = useState<string>()
+  const [expanseCategory, setExpanseCategory] = useState<string>('')
+  const [date, setDate] = useState<string>('')
+  const [description, setDescription] = useState<string>('')
   const [changed, setChanged] = useState(false)
   const { registerExpanse } = useExpanse()
 
   function handleRegisterExpanse() {
     registerExpanse(amount!, expanseType, expanseCategory!, date!, description!)
     setChanged(!changed)
+
+    setAmount('')
+    setExpanseCategory('')
+    setDate('')
+    setDescription('')
   }
 
   return(
@@ -33,7 +38,7 @@ export default function RegisterExpanse() {
             {/* INICIO DOS INPUTS */}
             <div className='input-form'>
               <label htmlFor="amount"> Valor da despesa (R$): </label>
-              <input onChange={e => setAmount(e.target.value)} type="text" name='amount' id='amount' placeholder='Digite o valor da despesa...' />
+              <input value={amount} onChange={e => setAmount(e.target.value)} type="text" name='amount' id='amount' placeholder='Digite o valor da despesa...' />
             </div>
 
             <div style={{ marginBottom: '20px' }} className='input-form'>
@@ -46,7 +51,7 @@ export default function RegisterExpanse() {
 
             <div className='input-form'>
               <label htmlFor="type"> Informe a categoria da despesa: </label>
-              <input onChange={e => setExpanseCategory(e.target.value)} type="text" placeholder="Informe o tipo:" list="faixa" name='type' id='type' />
+              <input value={expanseCategory} onChange={e => setExpanseCategory(e.target.value)} type="text" placeholder="Informe o tipo:" list="faixa" name='type' id='type' />
               <datalist id="faixa">
                 <option value="">Tipo:</option>
                 <option value="alimentação"></option>
@@ -60,12 +65,12 @@ export default function RegisterExpanse() {
 
             <div className='input-form'>
               <label htmlFor="date">Informe a data:</label>
-              <input onChange={e => setDate(e.target.value)} type="text" id='date' name='date' placeholder='Ex: 25/01/2002' />
+              <input value={date} onChange={e => setDate(e.target.value)} type="text" id='date' name='date' placeholder='Ex: 25/01/2002' />
             </div>
 
             <div className='input-form'>
               <label htmlFor="description">Descrição (opcional)</label>
-              <textarea onChange={e => setDescription(e.target.value)} placeholder='Descrição da despesa...' name="description" id="description" cols={30} rows={10}></textarea>
+              <textarea value={description} onChange={e => setDescription(e.target.value)} placeholder='Descrição da despesa...' name="description" id="description" cols={30} rows={10}></textarea>
             </div>
 
             <button onClick={handleRegisterExpanse} className='btn-register-expanse'>Cadastrar despesa</button>
