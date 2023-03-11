@@ -75,8 +75,8 @@ export default function RegisterExpanse() {
 
           <div className='table-with-divs'>
           {/* INICIO DA TABELA */}
-          <TableExpanse title='Saídas recentes' type='saida' action={true} changed={changed} height='320px' maxHeight='100%' />
-          <TableExpanse title='Entradas recentes' type='entrada' action={true} changed={changed} height='320px' maxHeight='100%' />
+          <TableExpanse title='Saídas recentes' type='saida' action={true} changed={changed} height='320px' maxHeight='100%' showModal={true} />
+          <TableExpanse title='Entradas recentes' type='entrada' action={true} changed={changed} height='320px' maxHeight='100%' showModal={false} />
           {/* FIM DA TABELA */}
           </div>
 

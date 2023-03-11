@@ -29,5 +29,26 @@ export const useExpanse = () => {
     setFlashMessage('Registro cadastrado com sucesso!', 'success')
   }
 
-  return { registerExpanse }
+  async function updateExpanses(amount: string, expanseType: 'entrada' | 'saida', expanseCategory: string, date: string, description: string, id: string) {
+
+    const token = localStorage.getItem('token')
+
+    try {
+      await api.patch(`/expanses/${id}`, {
+        amount,
+        expanseType,
+        type: expanseCategory,
+        date,
+        description
+      }, {
+      headers: {
+        authorization: `Bearer ${JSON.parse(token!)}`
+      }
+      }).then((response) => response.data)
+    } catch(err: any) {
+      setFlashMessage(err.response.data.message, 'err')
+    }
+  }
+
+  return { registerExpanse, updateExpanses }
 }
