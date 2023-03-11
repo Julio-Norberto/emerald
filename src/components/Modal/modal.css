@@ -1,0 +1,33 @@
+.fade {
+  position: absolute;
+}
+
+.modal {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 500px;
+  height: 600px;
+  z-index: 1;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.modal h2 {
+  margin-bottom: 1em;
+}
+
+.modal form {
+  width: 90%;
+}
+
+@media (max-width: 500px) {
+  .modal {
+    width: 330px;
+    border-radius: 5px;
+  }
+}
