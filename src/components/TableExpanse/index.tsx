@@ -3,7 +3,6 @@ import api from '../../utils/api'
 import { useEffect, useState } from 'react'
 import { Trash, Pencil, File } from 'phosphor-react'
 import { useFlashMessages } from '../../hooks/useFlashMessages.js'
-import { Modal } from '../Modal'
 
 import { pdfAmount } from '../../utils/pdf-amount'
 import React from 'react'
@@ -29,7 +28,7 @@ export interface IDataExpanse {
 
 export const TableExpanse: React.FC<tableComponent> = ({ type, title, action, changed, height, maxHeight, showModal }) => {
   const [data, setData] = useState<IDataExpanse[]>()
-  const [id, setId] = useState<string | undefined>()
+  const [id, setIdEntrada] = useState<string | undefined>()
   const [deleted, setDeleted] = useState(false)
   const { setFlashMessage } = useFlashMessages()
 
@@ -72,17 +71,8 @@ export const TableExpanse: React.FC<tableComponent> = ({ type, title, action, ch
     }
   }
 
-  function hiddeOrShowModal(display: boolean, index: number) {
-    const modal = document.querySelector('#modal')
-    data ? setId(data[index]._id) : ''
-    if(display) {
-      modal?.classList.remove('hide')
-    }
-  }
-
   return (
     <>
-    {showModal ? <Modal id={id} /> : ''}
     <h2 style={{ marginTop: '28px', textAlign: 'center' }} > {title} </h2>
     <div className='expansive-table' style={{ height: height }}>
       <div className='div-scroll' style={{ maxHeight: maxHeight }}>
@@ -106,7 +96,7 @@ export const TableExpanse: React.FC<tableComponent> = ({ type, title, action, ch
               <td align='center'> { expanses.amount } R$ </td>
               { !type ? <td align='center'> {expanses.expanseType} </td> : '' }
               { expanses.description ? <td align='center'> {expanses.description} </td> : '' }
-              { action ? <td align='center'> <button onClick={() => handleDelete(expanses._id!)}> {<Trash width={25} height={25} />} </button> <button onClick={() => hiddeOrShowModal(true, index)}> {<Pencil width={25} height={25} />} </button> </td> : '' }
+              { action ? <td align='center'> <button onClick={() => handleDelete(expanses._id!)}> {<Trash width={25} height={25} />} </button> <button> {<Pencil width={25} height={25} />} </button> </td> : '' }
             </tr>
           </tbody>
           ) : !type ? (
@@ -117,7 +107,6 @@ export const TableExpanse: React.FC<tableComponent> = ({ type, title, action, ch
               <td align='center'> { expanses.amount } R$ </td>
               <td align='center'> {expanses.expanseType} </td>
               <td align='center'> {expanses.description} </td>
-              { action ? <td align='center'> <button onClick={() => handleDelete(expanses._id!)} > {<Trash width={25} height={25} />} </button> <button > {<Pencil width={25} height={25} />} </button> </td> : '' }
             </tr>
           </tbody>
           ) : ''

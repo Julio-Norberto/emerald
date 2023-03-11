@@ -1,5 +1,5 @@
 import './registerExpanse.css'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { DrawerMenu } from '../../components/DrawerMenu'
 import { TableExpanse } from '../../components/TableExpanse'
 import { Message } from '../../components/Message'
@@ -76,7 +76,7 @@ export default function RegisterExpanse() {
           <div className='table-with-divs'>
           {/* INICIO DA TABELA */}
           <TableExpanse title='Saídas recentes' type='saida' action={true} changed={changed} height='320px' maxHeight='100%' showModal={true} />
-          <TableExpanse title='Entradas recentes' type='entrada' action={true} changed={changed} height='320px' maxHeight='100%' showModal={false} />
+          <TableExpanse title='Entradas recentes' type='entrada' action={true} changed={changed} height='320px' maxHeight='100%' showModal={true} />
           {/* FIM DA TABELA */}
           </div>
 

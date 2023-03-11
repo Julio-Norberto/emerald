@@ -1,4 +1,4 @@
-import { PlusCircle, MinusCircle, CurrencyCircleDollar, File } from 'phosphor-react'
+import { PlusCircle, MinusCircle, CurrencyCircleDollar } from 'phosphor-react'
 import { DrawerMenu } from '../../components/DrawerMenu'
 import { useEffect, useState } from 'react'
 import { TableExpanse } from '../../components/TableExpanse'
@@ -18,7 +18,7 @@ export interface IUserExpanses {
   expanseType: string,
   date: string,
   description: string
-  createdAt: Date
+  //createdAt: Date
 }
 
 export default function Dashboard() {
@@ -170,7 +170,7 @@ export default function Dashboard() {
       </div>
 
       <div className='table-div'>
-        <TableExpanse title='Todas as despesas' action={false} height={ matches ? '700px' : '500px' } maxHeight='60%' />
+        <TableExpanse showModal={false} title='Todas as despesas' action={false} height={ matches ? '700px' : '500px' } maxHeight='60%' />
       </div>
 
     </div>
