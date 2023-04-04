@@ -4,6 +4,7 @@ import { Message } from '../../components/Message'
 import { Context } from '../../contexts/UserContext.js'
 
 import './Register.css'
+import Loading from '../../components/Loading'
 
 export default function Register() {
 
@@ -11,11 +12,15 @@ export default function Register() {
   const [name, setName] = useState<string>()
   const [password, setPassword] = useState<string>()
   const [confirmPassword, setConfirmPass] = useState()
+  const [loading, setLoading] = useState(false)
 
   const { register } = useContext(Context)
 
-  async function handleRegister() {
-    register(name!, login!, password!, confirmPassword!)
+  async function handleRegister(e: any) {
+    e.preventDefault()
+    setLoading(true)
+    await register(name!, login!, password!, confirmPassword!)
+    setLoading(false)
   };
 
   return (
@@ -42,7 +47,7 @@ export default function Register() {
                   <label className='align'>Confirme sua senha <Key style={{ marginLeft: 10 }} /> </label>
                   <input onChange={(e: any) => setConfirmPass(e.target.value)} type="password" placeholder="Digite novamente sua senha..." />
               </div>
-              <input onClick={handleRegister} className='btn-register' value="Registrar" type='button' />
+              <button onClick={(e) => handleRegister(e)} className='btn-register'> { loading ? <Loading /> : 'Registrar' } </button>
 
               <p className='login-link-p'>Já possui conta? <a className='login-link' href="/login">Fazer Login</a> </p>
           </form>
