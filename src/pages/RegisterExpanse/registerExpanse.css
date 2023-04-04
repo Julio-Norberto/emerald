@@ -49,6 +49,9 @@
 
 .btn-register-expanse {
   width: 402px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 20px;
   height: 35px;
   background-color: #2d2f33;

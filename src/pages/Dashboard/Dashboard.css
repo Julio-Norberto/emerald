@@ -11,9 +11,17 @@
 }
 
 .dashboard-title {
+  display: flex;
   margin-top: 30px;
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
+}
+
+.dashboard-title span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 14px;
 }
 
 .dashboard-title h1 {

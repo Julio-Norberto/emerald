@@ -4,6 +4,7 @@ import { DrawerMenu } from '../../components/DrawerMenu'
 import { TableExpanse } from '../../components/TableExpanse'
 import { Message } from '../../components/Message'
 import { useExpanse } from '../../hooks/useExpanse'
+import Loading from '../../components/Loading'
 
 export default function RegisterExpanse() {
   const [amount, setAmount] = useState<string>('')
@@ -12,16 +13,20 @@ export default function RegisterExpanse() {
   const [date, setDate] = useState<string>('')
   const [description, setDescription] = useState<string>('')
   const [changed, setChanged] = useState(false)
+  const [loading, setLoading] = useState(false)
   const { registerExpanse } = useExpanse()
 
-  function handleRegisterExpanse() {
-    registerExpanse(amount!, expanseType, expanseCategory!, date!, description!)
+  async function handleRegisterExpanse(e: any) {
+    e.preventDefault()
+    setLoading(true)
+    await registerExpanse(amount!, expanseType, expanseCategory!, date!, description!)
     setChanged(!changed)
 
     setAmount('')
     setExpanseCategory('')
     setDate('')
     setDescription('')
+    setLoading(false)
   }
 
   return(
@@ -73,7 +78,7 @@ export default function RegisterExpanse() {
               <textarea value={description} onChange={e => setDescription(e.target.value)} placeholder='Descrição da despesa...' name="description" id="description" cols={30} rows={10}></textarea>
             </div>
 
-            <button onClick={handleRegisterExpanse} className='btn-register-expanse'>Cadastrar despesa</button>
+            <button style={{ textAlign: 'center' }} onClick={(e) => handleRegisterExpanse(e)} className='btn-register-expanse'> { loading ? <Loading /> : 'Cadastrar despesa' } </button>
             {/* FIM DOS INPUTS */}
 
           </div>

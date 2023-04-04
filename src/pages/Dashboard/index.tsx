@@ -11,6 +11,7 @@ import api from '../../utils/api'
 
 import './Dashboard.css'
 import { useMediaQuery } from '@mui/material'
+import Loading from '../../components/Loading'
 
 export interface IUserExpanses {
   amount: string,
@@ -28,9 +29,11 @@ export default function Dashboard() {
   const [entryExpenses, setEntryExpanses] = useState<number>(0)
   const [outGoingExpanses, setOutGoingExpanses] = useState<number>(0)
   const [total, setTotal] = useState<number>(0)
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     async function fetchUserExpanses() {
+      setLoading(true)
       const token = localStorage.getItem('token')
       const data = await api.get('/expanses', {
         headers: {
@@ -44,6 +47,7 @@ export default function Dashboard() {
       setChartData(newArray(data))
       setBarChartData(loadBarData(data))
       newArray(data)
+      setLoading(false)
     }
 
     fetchUserExpanses()
@@ -117,6 +121,7 @@ export default function Dashboard() {
       <div className="dashboard-content">
         <div className="dashboard-title">
           <h1>Dashboard</h1>
+          <span > { loading ? <Loading /> : '' } </span>
         </div>
 
         <div className="dashboard-cards">
@@ -146,7 +151,7 @@ export default function Dashboard() {
         { chartData.length > 0 && chartBarData.length > 0 ? (
         <div className='section-chart'>
           <h2>Gráfico de gastos e Saldo total</h2>
-          <div className='div-charts'>
+            <div className='div-charts'>
             <Chart
               chartType="PieChart"
               width="100%"
